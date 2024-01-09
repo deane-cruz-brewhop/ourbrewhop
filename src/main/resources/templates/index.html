@@ -6,6 +6,7 @@
 <header th:replace="~{partials/head.html :: header}"></header>
 <body>
     <div class="container">
+        <div class="hero-top">
         <!--Navbar validation-->
         <div th:unless="${#authorization.expression('isAuthenticated()')}">
             <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
@@ -13,22 +14,15 @@
         <div th:if="${#authorization.expression('isAuthenticated()')}">
             <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
         </div>
-<!--        <div id="ageModal" class="modal">-->
-<!--            <div class="modal-content">-->
-<!--                <h2>Are you over 21?</h2>-->
-<!--                <button onclick="redirectToPage(true)">Yes</button>-->
-<!--                <button onclick="redirectToPage(false)">No</button>-->
-<!--            </div>-->
-<!--        </div>-->
-
-        <div class="hero-top">
 
             <div class="carousel-container">
                 <div class="carousel">
+
                     <div class="video-slide">
                         <video controls autoplay muted id="landingPageVideo" class="video-full-width">
-                            <source th:src="@{/img/landingPageVideo.mp4}" type="video/mp4">
+                          <source th:src="@{/img/landingPageVideo.mp4}" type="video/mp4">
                             Your browser does not support the video tag.
+
                         </video>
                     </div>
                 </div>
@@ -42,7 +36,22 @@
 <!--            </div>-->
 
         </div>
-<!--        <div class="hero-bottom">-->
+    </div>
+    <div class="row-jumbo">
+        <div class="container-jumbo">
+            <div class="jumbotron">
+                <h1>Crafting Connections</h1>
+                <p class="lead">Embark on a journey to discover the finest breweries. Unleash the power of our intuitive search tool to unveil your next favorite haven. Share your tales by crafting reviews. Join our brotherhood of beer aficionados and together, let's raise a toast to the art of brewing.</p>
+                <hr>
+                <p>Cheers to the pursuit of the perfect pint!</p>
+                <p class="lead">
+                    <a class="btn-primary" href="#" role="button">Explore Breweries</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+        <!--        <div class="hero-bottom">-->
 <!--            <div class="breweries-holder-hero">-->
 <!--                <h2>Check out some Breweries!</h2>-->
 <!--                <input type="text" id="breweryName" placeholder="Brewery Name">-->
@@ -82,6 +91,20 @@
                 });
             }
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            var navbar = document.querySelector('.nav-bar');
+
+            window.addEventListener('scroll', function () {
+                // Check if the page has been scrolled
+                if (window.scrollY > 50) {
+                    // Apply the fading class when scrolled
+                    navbar.classList.add('nav-fade');
+                } else {
+                    // Remove the fading class when at the top
+                    navbar.classList.remove('nav-fade');
+                }
+            });
+        });
     </script>
 </body>
 </html>

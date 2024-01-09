@@ -12,6 +12,10 @@
     --quaternary-color: #9AA1B1;
     --new-color: #CDB5A7;
 }
+body {
+    border: 3px solid #8FA399;
+
+}
 
 ul, li, h1, h2, h3, h4, h5, h6, p{
     font-family: 'Trirong', serif;
@@ -36,16 +40,18 @@ a {
 /*Nav Bar Styling and Animations*/
 nav {
     background-color: #9A8873;
-    padding: 1rem;
+    /*padding: 1rem;*/
 
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
-nav.a {
-    color: var(--secondary-color);
-    text-decoration: none;
-}
+
+/*nav.a {*/
+/*    color: #F0D397;*/
+/*    text-decoration: none;*/
+/*}*/
 
 .inner-nav {
     display: flex;
@@ -54,24 +60,91 @@ nav.a {
 }
 
 .nav-list {
+    /*justify-content: space-evenly;*/
     list-style: none;
     margin: 0;
-    padding: 0;
-
+    padding-left: 10px;
+    padding-top: 50px;
+    padding-right: 10px;
     display: flex;
     gap: clamp(0.5rem, 5vw, 2rem);
 }
+.nav-bar a.custom-link{
+    text-decoration: none;
+    color: #161513;
+    /*text-shadow:2px 2px 2px #D17C19;*/
+}
+.nav-bar a.custom-link:hover{
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
 
-.logo {
-    font-family: 'Playfair Display SC', serif;
+/*.logo {*/
+/*    font-family: 'Playfair Display SC', serif;*/
+/*    color: #fff;*/
+/*    font-size: 50px;*/
+/*    font-weight: 900;*/
+/*}*/
+.row-jumbo{
+    background-color: #EEFFDB;
+}
+.container-jumbo {
+    max-width: 800px;
+    padding: 20px;
+    background-color: #EEFFDB;
+    margin: 0;
+}
+
+.jumbotron {
+    background-color: #2E3833;
     color: #fff;
-    font-size: 50px;
-    font-weight: 900;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.jumbotron h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.lead {
+    font-size: 1.25em;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    color: #fff;
+    background-color: #28a745;
+    border-color: #28a745;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    color: #fff;
+    background-color: #218838;
+    border-color: #1e7e34;
 }
 .brewhop-logo{
     display: flex;
-    position: relative;
-    bottom: 20px;
+    /*position: relative;*/
+    /*bottom: 20px;*/
     width: 150px;
     height: 150px;
 }
@@ -84,6 +157,7 @@ body {
     /*display: flex;*/
     /*justify-content: start;*/
     /*padding-top: 100px;*/
+    background-color: #EEFFDB;
     padding-bottom: 100px;
     /*margin-left: 50px;*/
     margin-right: 0;
@@ -100,6 +174,10 @@ body {
     border-radius: 25px;
     overflow: hidden;
     text-space: 10px;
+}
+.footer{
+    background-color: #D17C19;
+    color: #F0D397;
 }
 /*Genesis Style's*/
 .video-full-width {
