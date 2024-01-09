@@ -42,6 +42,7 @@ public class SecurityConfiguration {
 
                         .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/sign-in", "/view-breweries", "/view-brewery").permitAll()
 
+
                         .requestMatchers("/css/**", "/js/**", "/img/**").permitAll())
                 .formLogin((login) -> login.loginPage("/sign-in").defaultSuccessUrl("/profile", true))
                 .logout((logout) -> logout.logoutSuccessUrl("/sign-in"))

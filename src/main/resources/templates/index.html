@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <link rel="stylesheet" href="/css/main.css">
+</head>
 <header th:replace="~{partials/head.html :: header}"></header>
 <body>
     <div class="container">
@@ -19,38 +22,50 @@
 <!--        </div>-->
 
         <div class="hero-top">
-            <div class="welcome-box">
-                <h1>Brew-Hop!</h1><br>
-                <p>We are passionate about connecting you to the best breweries around. Explore our easy-to-use search feature to discover your new favorite spot, and share your experiences by leaving reviews. Join our community of beer enthusiasts and let's celebrate the art of brewing together. Cheers to finding the perfect pint!</p>
-                <form th:action="@{/view-breweries}" th:method="post">
-                    <button>Check out Breweries</button>
-                </form>
+
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="video-slide">
+                        <video controls autoplay muted id="landingPageVideo" class="video-full-width">
+                            <source th:src="@{/img/landingPageVideo.mp4}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
             </div>
+<!--            <div class="welcome-box">-->
+<!--                <h1>Brew-Hop!</h1><br>-->
+<!--                <p>We are passionate about connecting you to the best breweries around. Explore our easy-to-use search feature to discover your new favorite spot, and share your experiences by leaving reviews. Join our community of beer enthusiasts and let's celebrate the art of brewing together. Cheers to finding the perfect pint!</p>-->
+<!--                <form th:action="@{/view-breweries}" th:method="post">-->
+<!--                    <button>Check out Breweries</button>-->
+<!--                </form>-->
+<!--            </div>-->
+
         </div>
-        <div class="hero-bottom">
-            <div class="breweries-holder-hero">
-                <h2>Check out some Breweries!</h2>
-                <input type="text" id="breweryName" placeholder="Brewery Name">
-                <input type="text" id="city" placeholder="City">
-                <input type="text" id="state" placeholder="State">
-                <select id="breweryType">
-                    <option value="">Select Brewery Type</option>
-                    <option value="micro">Micro</option>
-                    <option value="nano">Nano</option>
-                    <option value="regional">Regional</option>
-                    <option value="brewpub">Brewpub</option>
-                    <option value="large">Large</option>
-                    <option value="planning">Planning</option>
-                    <option value="bar">Bar</option>
-                    <option value="contract">Contract</option>
-                    <option value="proprietor">Proprietor</option>
-                    <option value="closed">Closed</option>
-                </select>
-                <button onclick="searchBreweries()">Search</button>
-                <div id="results"></div>
-                <script th:src="@{/js/brew.js}"></script>
-            </div>
-        </div>
+<!--        <div class="hero-bottom">-->
+<!--            <div class="breweries-holder-hero">-->
+<!--                <h2>Check out some Breweries!</h2>-->
+<!--                <input type="text" id="breweryName" placeholder="Brewery Name">-->
+<!--                <input type="text" id="city" placeholder="City">-->
+<!--                <input type="text" id="state" placeholder="State">-->
+<!--                <select id="breweryType">-->
+<!--                    <option value="">Select Brewery Type</option>-->
+<!--                    <option value="micro">Micro</option>-->
+<!--                    <option value="nano">Nano</option>-->
+<!--                    <option value="regional">Regional</option>-->
+<!--                    <option value="brewpub">Brewpub</option>-->
+<!--                    <option value="large">Large</option>-->
+<!--                    <option value="planning">Planning</option>-->
+<!--                    <option value="bar">Bar</option>-->
+<!--                    <option value="contract">Contract</option>-->
+<!--                    <option value="proprietor">Proprietor</option>-->
+<!--                    <option value="closed">Closed</option>-->
+<!--                </select>-->
+<!--                <button onclick="searchBreweries()">Search</button>-->
+<!--                <div id="results"></div>-->
+<!--                <script th:src="@{/js/brew.js}"></script>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="footer">
             <p>Brew-Hop™: Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
 
@@ -58,5 +73,15 @@
         </div>
     </div>
 
+    <script>
+        function playVideo() {
+            var video = document.getElementById('landingPageVideo');
+            if (video) {
+                video.play().catch(function(error) {
+                    console.error('Autoplay was blocked:', error);
+                });
+            }
+        }
+    </script>
 </body>
 </html>

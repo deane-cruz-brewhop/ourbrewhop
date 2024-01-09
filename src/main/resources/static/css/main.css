@@ -35,7 +35,7 @@ a {
 
 /*Nav Bar Styling and Animations*/
 nav {
-    background-color: var(--primary-color);
+    background-color: #9A8873;
     padding: 1rem;
 
     position: sticky;
@@ -50,6 +50,7 @@ nav.a {
 .inner-nav {
     display: flex;
     justify-content: space-between;
+    height: 50%;
 }
 
 .nav-list {
@@ -67,17 +68,25 @@ nav.a {
     font-size: 50px;
     font-weight: 900;
 }
+.brewhop-logo{
+    display: flex;
+    position: relative;
+    bottom: 20px;
+    width: 150px;
+    height: 150px;
+}
 
 /*Index.html styling*/
 body {
     background-color: #464853;
 }
 .hero-top {
-    display: flex;
-    justify-content: start;
-    padding-top: 100px;
+    /*display: flex;*/
+    /*justify-content: start;*/
+    /*padding-top: 100px;*/
     padding-bottom: 100px;
-    margin-left: 50px;
+    /*margin-left: 50px;*/
+    margin-right: 0;
 }
 .welcome-box {
     display: flex;
@@ -93,6 +102,10 @@ body {
     text-space: 10px;
 }
 /*Genesis Style's*/
+.video-full-width {
+    width: 100%;
+    display: block;
+}
 .profile-card {
     display: flex;
     flex-direction: column;
