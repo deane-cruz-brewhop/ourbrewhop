@@ -198,8 +198,9 @@ body {
 }
 .footer{
     background-color: #9A8873;
-    color: #F0D397;
+    color: #161513;
     text-align: -webkit-center;
+    padding-top: 10px;
 }
 .footer-list{
     justify-content: center;
