@@ -1,6 +1,100 @@
-.review-card {
-    height: 100px;
-    width: 250px;
-    border: 1px solid transparent;
-    border-radius: 25px;
+.container {
+
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-y: auto; /* Add scroll for overflow */
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.hero-left {
+    flex: 1;
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-right img {
+    max-width: 50%;
+    height: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns */
+    gap: 20px;
+    padding: 10px;
+}
+
+.brewery-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd; /* Softer border color */
+    padding: 15px;
+    background-color: #fff; /* Lighter background */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.brewery-card:hover {
+    transform: scale(1.03); /* Scale effect on hover */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.brewery-card img {
+    width: 100%;
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.brewery-card .brewery-details {
+    text-align: center;
+}
+
+.brewery-card .brewery-details h2 {
+    font-size: 1.1em; /* Adjust font size */
+    margin-bottom: 10px;
+}
+
+.brewery-card .view-button {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    transition: background-color 0.3s ease;
+}
+
+.brewery-card .view-button:hover {
+    background-color: #1a73e8; /* Slightly darker on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #results {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    #results {
+        grid-template-columns: 1fr; /* One column on very small screens */
+    }
 }
