@@ -6,13 +6,13 @@
 /*font-family: 'Trirong', serif;*/
 
 :root{
-    --primary-color: #0C0A09;
-    --secondary-color: #FDF5F2;
-    --tertiary-color: #A47F6A;
-    --quaternary-color: #9AA1B1;
-    --new-color: #CDB5A7;
+    /*--primary-color: #0C0A09;*/
+    /*--secondary-color: #FDF5F2;*/
+    /*--tertiary-color: #A47F6A;*/
+    /*--quaternary-color: #9AA1B1;*/
+    /*--new-color: #CDB5A7;*/
 }
-body {
+.index-page {
     border: 3px solid #8FA399;
 
 }
@@ -250,9 +250,14 @@ body {
     text-align: center;
 }
 
-.pfp {
-    background-color: white;
-    margin-bottom: 10px;
+/*.pfp {*/
+/*    background-color: white;*/
+/*    margin-bottom: 10px;*/
+/*}*/
+.profile-page{
+    background-color: #EEFFDB;
+    border: 3px solid #8FA399;
+
 }
 
 .username-h1,
@@ -370,4 +375,8 @@ img {
 .card-main,
 .card-main-profile {
     animation: slideIn 0.5s ease-out forwards; /* Adjust the animation duration and timing function */
+}
+.sign-in-page{
+    background-color: #EEFFDB;
+    border: 3px solid #8FA399;
 }
