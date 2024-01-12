@@ -380,3 +380,62 @@ img {
     background-color: #EEFFDB;
     border: 3px solid #8FA399;
 }
+.team-page{
+    display: flex;
+    flex-direction: column;
+    background-color: #EEFFDB;
+}
+.meet-the-team {
+    display: flex;
+    justify-content: space-around; /* or 'space-between' if you want space at the ends */
+    background-color: #EEFFDB;
+}
+.team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ddd;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 10px;
+    width: 200px;
+}
+
+.team-card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.team-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.team-card .team-details {
+    text-align: center;
+}
+
+.team-card .team-details h2 {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+
+.team-card .view-button {
+    background-color: dodgerblue;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-align: center;
+    width: 80%;
+    transition: background-color 0.3s ease;
+}
+
+.team-card .view-button:hover {
+    background-color: #1a73e8;
+}
