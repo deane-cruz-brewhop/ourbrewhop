@@ -13,7 +13,9 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
+<div class="meet-title">
 <h1>Meet the Team</h1>
+</div>
 <div class="meet-the-team">
 <section class="team-card">
     <img src="[Your Image URL]" alt="Your Image">
@@ -21,8 +23,8 @@
         <h2>Daniel Deane</h2>
         <p>Full-Stack Developer</p>
 
-        <a href="https://linkedin.com/in/daniel-deane-93b95b285" class="view-button" target="_blank">LinkedIn</a>
-        <a href="https://github.com/dandeane1" class="view-button" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/daniel-deane-93b95b285" class="team-button" target="_blank">LinkedIn</a>
+        <a href="https://github.com/dandeane1" class="team-button" target="_blank">GitHub</a>
     </div>
 </section>
 
@@ -31,9 +33,10 @@
     <div class="team-details">
         <h2>Genesis Cruz Asturias</h2>
         <p>Full-Stack Developer</p>
-
-        <a href="https://linkedin.com/in/genesis-cruz-astu-rias" class="view-button" target="_blank">LinkedIn</a>
-        <a href="https://github.com/genesiscruzasturias" class="view-button" target="_blank">GitHub</a>
+        <div class="team-btns">
+        <a href="https://linkedin.com/in/genesis-cruz-astu-rias" class="team-button" target="_blank">LinkedIn</a>
+        <a href="https://github.com/genesiscruzasturias" class="team-button" target="_blank">GitHub</a>
+        </div>
     </div>
 </section>
 </div>

@@ -402,6 +402,7 @@ img {
     transition: all 0.3s ease;
     margin: 10px;
     width: 200px;
+    /*height: 500px;*/
 }
 
 .team-card:hover {
@@ -426,7 +427,7 @@ img {
     margin-bottom: 10px;
 }
 
-.team-card .view-button {
+.team-card .team-button {
     background-color: dodgerblue;
     color: white;
     padding: 10px 15px;
@@ -434,8 +435,16 @@ img {
     text-align: center;
     width: 80%;
     transition: background-color 0.3s ease;
+    /*margin-top: 20px;*/
+}
+.team-buttons{
+    margin-top: 25px;
 }
 
-.team-card .view-button:hover {
+.team-card .team-button:hover {
     background-color: #1a73e8;
+}
+.meet-title{
+    display: flex;
+    justify-content: center;
 }
