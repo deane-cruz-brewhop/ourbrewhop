@@ -376,10 +376,10 @@ img {
 .card-main-profile {
     animation: slideIn 0.5s ease-out forwards; /* Adjust the animation duration and timing function */
 }
-.sign-in-page{
-    background-color: #EEFFDB;
-    border: 3px solid #8FA399;
-}
+/*.sign-in-page{*/
+/*    background-color: #EEFFDB;*/
+/*    border: 3px solid #8FA399;*/
+/*}*/
 .team-page{
     display: flex;
     flex-direction: column;
