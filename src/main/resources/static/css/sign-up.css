@@ -1,13 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Trirong:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-body {
+.sign-up-page {
     background-color: #EEFFDB;
     border: 3px solid #8FA399;
-    margin: 0;
-    padding: 0;
 }
 
 .content-container {
-    height: calc(100vh - 200px); /* Adjust height considering the nav bar height */
+    height: calc(100vh - 150px); /* Adjust height considering the nav bar height */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,20 +57,29 @@ h1 {
 input[type="submit"] {
     width: 75%;
     padding: 10px;
-    background-color: black;
-    color: #F0D397;
     border-radius: 20px;
     border: none;
     cursor: pointer;
-    margin: 0 auto;
+    /*padding: 10px;*/
+    margin-left: 95px;
     display: block;
+    background-color: #F0D397;
+    color: #D17C19;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
     /*margin-top: 10px;*/
 }
 
 input[type="submit"]:hover {
-    background-color: #333;
+    background-color: #D17C19;
+    color: #2E3833;
 }
 
+input[type="submit"]:active {
+    background-color: #F0D397; /* Change back to original color on click */
+    color: #D17C19;
+    text-decoration: none; /* Remove underline on click */
+}
 .error {
     color: red;
     font-size: 0.8em;
@@ -81,4 +88,18 @@ input[type="submit"]:hover {
 
 a {
     color: dodgerblue;
+}
+a.sign-in-link {
+    /*background-color: #F0D397;*/
+    color: #D17C19;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+a.sign-in-link:hover {
+    /*background-color: #D17C19;*/
+    color: #F0D397;
+}
+.account-text{
+    padding-top: 10px;
 }

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="/css/sign-up.css">
     <title>Sign Up</title>
 </head>
-<body>
+<body class="sign-up-page">
 <nav th:insert="~{partials/nav-bar.html :: nav-bar3}"></nav>
 <div class="content-container">
     <h1>CREATE YOUR ACCOUNT NOW!</h1>
@@ -31,7 +31,7 @@
 
         <input value="Sign me up!" type="submit" />
     </form>
-    <p>Already have an account? <a href="/sign-in">Sign in here!</a></p>
+    <p class="account-text">Already have an account? <a href="/sign-in" class="sign-in-link">Sign in here!</a></p>
 </div>
 </div>
 

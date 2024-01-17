@@ -32,11 +32,8 @@
             <div class="jumbotron">
                 <h1>Crafting Connections</h1>
                 <p class="lead">Embark on a journey to discover the finest breweries. Unleash the power of our intuitive search tool to unveil your next favorite haven. Share your tales by crafting reviews. Join our brotherhood of beer aficionados and together, let's raise a toast to the art of brewing.</p>
-                <hr>
+                <hr class="jumbo-hr">
                 <p>Cheers to the pursuit of the perfect pint!</p>
-                <p class="lead">
-                    <a class="btn-jumbo" href="#" role="button">Explore Breweries</a>
-                </p>
             </div>
         </div>
         <div class="jumbo-image-div">
@@ -50,23 +47,20 @@
                 <li><a class="footer-link"  th:href="@{/about-brewhop}">About BrewHop</a></li>
                 <li><a class="footer-link"  th:href="@{/terms-of-service}">Terms of Service</a></li>
                  </ul>
-            <img src="/img/brewhop.png" class="footer-image" alt="footer-image">
+                <a href="#" onclick="scrollToTop(); return false;">
+                    <img src="/img/brewhop.png" class="footer-image" alt="footer-image">
+                </a>
             </div>
 
-            <p>Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+            <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
 
         </div>
     </div>
 
     <script>
-        // function playVideo() {
-        //     var video = document.getElementById('landingPageVideo');
-        //     if (video) {
-        //         video.play().catch(function(error) {
-        //             console.error('Autoplay was blocked:', error);
-        //         });
-        //     }
-        // }
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
         document.addEventListener('DOMContentLoaded', function () {
             // Get the video element
             var video = document.getElementById('landingPageVideo');

@@ -162,6 +162,9 @@ nav {
     border-color: #ce7916; /* Set the hover border color to a darker green */
     text-decoration: none;
 }
+.jumbo-hr{
+    color: #D17C19;
+}
 .brewhop-logo{
     display: flex;
     /*position: relative;*/
@@ -204,16 +207,14 @@ body {
 }
 .footer-list-image{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    margin-right: 300px;
 }
 .footer-list{
     justify-content: flex-start;
     flex-direction: column;
     list-style: none;
-    /*margin-right: 200px;*/
-    /*padding-left: 25px;*/
-    /*padding-top: 20px;*/
-    /*padding-right: 25px;*/
+    margin-right: 100px;
     display: flex;
     gap: clamp(0.5rem, 5vw, 2rem);
 }
@@ -227,9 +228,21 @@ body {
     color: #161513;
     text-shadow:2px 2px 2px #D17C19;
 }
+
 .footer-image{
     width: 150px;
     height: 150px;
+}
+.footer-image:hover{
+    text-decoration: none;
+    color: #161513;
+    text-shadow:2px 2px 2px #D17C19;
+}
+/*.footer-image:hover{*/
+/*    opacity: 0.02%;*/
+/*}*/
+.footer-paragraph{
+    color: #F0D397;
 }
 /*Genesis Style's*/
 .video-full-width {
