@@ -1,0 +1,102 @@
+.search-page{
+    background-color: #EEFFDB;
+}
+.brewery-card {
+    background-color: #2E3833;
+    color: #F0D397;
+    text-decoration: none;
+    flex: 0 0 calc(25% - 20px); /* Adjust the width as needed, considering the gap */
+    max-width: calc(25% - 20px); /* Adjust the width as needed, considering the gap */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px; /* Add margin between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.view-brewery-btn {
+    margin-left: 5px;
+    background-color: #F0D397;
+    color: #D17C19;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+}
+
+.view-brewery-btn:hover {
+    background-color: #D17C19;
+    color: #2E3833;
+}
+
+.view-brewery-btn:active {
+    background-color: #F0D397; /* Change back to original color on click */
+    color: #D17C19;
+    text-decoration: none; /* Remove underline on click */
+}
+.brewery-image {
+    width: 100%; /* Make the image fill the card width */
+    height: 150px;
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+}
+
+.brewery-info {
+    padding: 10px;
+}
+
+.results-text {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 10px;
+    color: #2E3833;
+}
+.search-text{
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    padding: 10px;
+    color: #2E3833;
+}
+.search-button{
+    background-color: #F0D397;
+    color: #D17C19;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+}
+
+.search-button:hover {
+    background-color: #D17C19;
+    color: #2E3833;
+}
+
+.search-button:active {
+    background-color: #F0D397; /* Change back to original color on click */
+    color: #D17C19;
+    text-decoration: none; /* Remove underline on click */
+}
+input{
+    background-color: #2E3833;
+    color: #F0D397;
+}
+select{
+    background-color: #2E3833;
+    color: #F0D397;
+}
+.hidden {
+    display: none;
+}
+.view-brewery-btn,
+.view-brewery-btn:hover,
+.view-brewery-btn:active,
+.view-brewery-btn:focus,
+.brewery-info a {
+    text-decoration: none;
+    color: #D17C19;
+}

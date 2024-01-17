@@ -1,6 +1,78 @@
-.review-card {
-    height: 100px;
-    width: 250px;
-    border: 1px solid transparent;
-    border-radius: 25px;
+.view-brewery-body{
+    background-color: #EEFFDB;
+    color: #2E3833;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    overflow-y: auto; /* Add scroll for overflow */
+}
+
+#results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+}
+
+.brewery-card {
+    background-color: #2E3833;
+    color: #F0D397;
+    text-decoration: none;
+    flex: 0 0 calc(33.33% - 20px); /* Adjust the width for three columns considering the gap */
+    max-width: calc(33.33% - 20px); /* Adjust the width for three columns considering the gap */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px; /* Add margin between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.brewery-card img {
+    width: 100%;
+    height: 150px; /* Adjust the height as needed */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+    border-radius: 5px;
+}
+
+.brewery-info {
+    padding: 10px;
+}
+
+.view-brewery-btn {
+    margin-top: 10px; /* Add space between the content and the button */
+    background-color: #F0D397;
+    color: #D17C19;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+}
+
+.view-brewery-btn:hover {
+    background-color: #D17C19;
+    color: #2E3833;
+}
+
+.view-brewery-btn:active {
+    background-color: #F0D397; /* Change back to the original color on click */
+    color: #D17C19;
+    text-decoration: none; /* Remove underline on click */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    #results {
+        flex-direction: column; /* Stack cards in a column on smaller screens */
+    }
+
+    .brewery-card {
+        flex: 0 0 calc(100% - 20px); /* Full width on smaller screens */
+        max-width: calc(100% - 20px); /* Full width on smaller screens */
+    }
 }

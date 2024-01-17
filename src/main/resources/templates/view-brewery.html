@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
+        .view-brewery-body{
+            background-color: #EEFFDB;
+            color: #F0D397;
+        }
         .review-card {
             height: 300px;
             width: 400px;
@@ -21,7 +25,7 @@
     <title>Brewery Page</title>
     <header th:replace="~{partials/head.html :: header}"></header>
 </head>
-<body>
+<body class="view-brewery-body">
 <div th:unless="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
 </div>
