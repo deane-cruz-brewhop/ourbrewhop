@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="_csrf" th:content="${_csrf.token}" />
 </head>
@@ -26,6 +26,7 @@
         <p class="email-p" th:text="${user.email}"></p>
         <button class="edit-profile-btn"><a th:href="@{/profile/edit/{id}(id = ${ user.getId()})}">Edit Profile</a></button>
     </div>
+</div>
     <div class="container review-container">
     <th:block th:each="review : ${userReviews}">
         <div class="reviewBox-container">
@@ -40,7 +41,7 @@
         </div>
     </th:block>
 </div>
-</div>
+
 
 <!--    <h3 class="user-reviews-text">User Reviews</h3>-->
 

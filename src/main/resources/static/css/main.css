@@ -203,12 +203,13 @@ body {
     padding-top: 10px;
 }
 .footer-list{
-    justify-content: center;
+    justify-content: flex-start;
+    flex-direction: column;
     list-style: none;
-    margin: 0;
-    padding-left: 25px;
-    padding-top: 20px;
-    padding-right: 25px;
+    margin-right: 200px;
+    /*padding-left: 25px;*/
+    /*padding-top: 20px;*/
+    /*padding-right: 25px;*/
     display: flex;
     gap: clamp(0.5rem, 5vw, 2rem);
 }
@@ -221,6 +222,10 @@ body {
     text-decoration: none;
     color: #161513;
     text-shadow:2px 2px 2px #D17C19;
+}
+.footer-image{
+    width: 150px;
+    height: 150px;
 }
 /*Genesis Style's*/
 .video-full-width {
@@ -267,15 +272,21 @@ body {
 
 .edit-profile-btn {
     position: absolute;
-    bottom: 8px; /* Adjust this value to control the distance from the bottom */
-    left: 50%; /* Align the button to the center horizontally */
-    transform: translateX(-50%); /* Adjust this to center the button horizontally */
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
     display: block;
     padding: 8px;
     text-align: center;
-    background-color: #0C0A09;
+    background-color: #F0D397;
     text-decoration: none;
     border-radius: 4px;
+    color: #D17C19; /* Updated text color */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.edit-profile-btn:hover {
+    background-color: #D17C19;
+    color: #2E3833;
 }
 .review-container {
     display: flex;
@@ -295,6 +306,23 @@ body {
     box-shadow:  0 12px 24px rgba(139, 69, 19, 0.4), 0 0 10px rgba(244, 164, 96, 0.6);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+.card-main-profile {
+    display: flex;
+    max-width: 250px;
+    height: 550px;
+    margin-top: 50px;
+    margin-left: 25px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2E3833; /* Updated background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
 
 .card-main-profile:hover {
     transform: translateY(35px); /* Adjust the desired amount of vertical lift on hover */
@@ -312,7 +340,8 @@ body {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    background-color: #fff;
+    background-color: #2E3833;
+    color: #F0D397;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     position: relative;
 }
@@ -321,6 +350,11 @@ body {
     padding: 16px;
     overflow: hidden; /* Hide overflowing content */
     text-overflow: ellipsis;
+}
+.card-stuff-profile {
+    padding: 20px;
+    overflow: hidden;
+    text-align: center;
 }
 
 img {
@@ -333,16 +367,21 @@ img {
     margin-bottom: 8px;
 }
 
-.card-button {
+.edit-profile-btn{
     position: absolute;
     bottom: 8px;
     right: 8px;
     display: block;
     padding: 8px;
     text-align: center;
-    background-color: #0C0A09;
+    background-color:#F0D397;
+    color: #D17C19;
     text-decoration: none;
     border-radius: 4px;
+}
+.edit-profile-btn:hover {
+    background-color: #D17C19;
+    color: #2E3833;
 }
 .circle {
     width: 100px;
