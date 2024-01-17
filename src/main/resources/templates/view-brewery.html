@@ -7,7 +7,7 @@
     <style>
         .view-brewery-body{
             background-color: #EEFFDB;
-            color: #F0D397;
+            color: #2E3833;
         }
         .review-card {
             height: 300px;
@@ -20,6 +20,27 @@
         }
         .checked {
             color: #deb217;
+        }
+        .write-review-btn {
+            background-color: #F0D397;
+            color: #D17C19;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            display: inline-block;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+        }
+
+        .write-review-btn:hover {
+            background-color: #D17C19;
+            color: #2E3833;
+        }
+
+        .write-review-btn:active {
+            background-color: #F0D397; /* Change back to the original color on click */
+            color: #D17C19;
+            text-decoration: none; /* Remove underline on click */
         }
     </style>
     <title>Brewery Page</title>
@@ -36,7 +57,7 @@
 
     <form id="brewIDGet" th:action="@{/create}" th:method="get">
         <input id="brewFormID" type="hidden" name="brewery">
-        <button type="submit">Write A Review</button>
+        <button class="write-review-btn" type="submit">Write A Review</button>
     </form>
 
 
