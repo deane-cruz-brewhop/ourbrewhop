@@ -202,11 +202,15 @@ body {
     text-align: -webkit-center;
     padding-top: 10px;
 }
+.footer-list-image{
+    display: flex;
+    justify-content: space-between;
+}
 .footer-list{
     justify-content: flex-start;
     flex-direction: column;
     list-style: none;
-    margin-right: 200px;
+    /*margin-right: 200px;*/
     /*padding-left: 25px;*/
     /*padding-top: 20px;*/
     /*padding-right: 25px;*/
