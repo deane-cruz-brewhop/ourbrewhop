@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
     <title>Title</title>
 </head>
-<body>
+<header th:replace="~{partials/head.html :: header}"></header>
+<body class="terms-page">
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
+</div>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
+</div>
 <h1>Terms of Service</h1>
+<h2>Acceptance of Terms</h2>
+<p>By accessing or using the services provided by BrewHop, you agree to comply with and be bound by the following Terms of Service. If you do not agree with these terms, please refrain from using our services.</p>
+<h2> User Eligibility</h2>
+<p>You must be of legal drinking age in your jurisdiction to use our services. By using BrewHop, you affirm that you are of legal drinking age. If you are not of legal drinking age, you are prohibited from using our services.</p>
+<h2>Account Registration</h2>
+<p>To access certain features of BrewHop, you may need to create an account. You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+<h2>Brewery Listings</h2>
+<p>BrewHop provides a platform for breweries to showcase their information. We strive for accuracy, but we do not guarantee the accuracy, completeness, or reliability of brewery information. Users should verify details directly with the breweries.</p>
+<h2>Termination</h2>
+<p>BrewHop reserves the right to terminate or suspend user accounts for violations of these Terms of Service or for any reason at our discretion.</p>
+<div class="footer">
+    <div class="footer-list-image">
+        <ul class="footer-list ">
+            <li><a class="footer-link" th:href="@{/meet-the-team}">Meet the Team</a></li>
+            <li><a class="footer-link"  th:href="@{/about-brewhop}">About BrewHop</a></li>
+        </ul>
+        <a href="#" onclick="scrollToTop(); return false;">
+            <img src="/img/brewhop.png" class="footer-image" alt="footer-image">
+        </a>
+    </div>
+
+    <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+
+</div>
 </body>
 </html>

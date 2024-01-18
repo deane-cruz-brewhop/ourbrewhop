@@ -2,6 +2,7 @@
 .sign-up-page {
     background-color: #EEFFDB;
     border: 3px solid #8FA399;
+    /*background-image: url("static/img/pexels-pixabay-159291.jpg");*/
 }
 
 .content-container {
@@ -10,6 +11,8 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    /*opacity: 0.02%;*/
 }
 
 .card {
