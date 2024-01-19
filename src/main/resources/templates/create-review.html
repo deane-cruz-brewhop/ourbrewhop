@@ -4,9 +4,16 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/create-review.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <header th:replace="~{partials/head.html :: header}"></header>
     <title>Title</title>
 </head>
-<body>
+<body class="create-page">
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
+</div>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
+</div>
     <h1>Create a post!</h1>
     <div id="breweryInfo"></div>
 

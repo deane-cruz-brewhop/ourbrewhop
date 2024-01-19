@@ -1,5 +1,5 @@
     import {
-    client
+    client, yelp_api
     } from "./keys.js"
 
     const defaultId = "default_id";
