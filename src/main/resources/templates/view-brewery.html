@@ -53,6 +53,7 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
+
     <div id="breweryInfo"></div>
 
     <form id="brewIDGet" th:action="@{/create}" th:method="get">
