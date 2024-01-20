@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
 }
+.create-page{
+    background-color: #EEFFDB;
+    color: #2E3833;
+}
 .rate {
     float: left;
     height: 46px;

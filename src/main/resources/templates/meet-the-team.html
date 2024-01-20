@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Meet the Team</title>
+</head>
+<header th:replace="~{partials/head.html :: header}"></header>
+<body class="team-page">
+<div th:unless="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
+</div>
+<div th:if="${#authorization.expression('isAuthenticated()')}">
+    <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
+</div>
+<div class="meet-title">
+    <h1 style="color: #2E3833; font-size: 24px;">Meet the Team</h1>
+</div>
+<div class="meet-the-team">
+    <div class="team-member">
+        <img src="/img/genesis.jpg" class="team-image" alt="team-image">
+        <div class="team-details">
+            <h2><bold>Genesis Cruz Asturias</bold></h2>
+            <p>Full-Stack Developer</p>
+            <div class="team-btns">
+                <a href="https://linkedin.com/in/genesis-cruz-astu-rias" class="team-button" target="_blank">LinkedIn</a>
+                <a href="http://github.com/genesiscruzasturias" class="team-button" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-member">
+        <img src="[Daniel's Image URL]" alt="Daniel's Image">
+        <div class="team-details">
+            <h2>Daniel Deane</h2>
+            <p>Full-Stack Developer</p>
+            <div class="team-btns">
+                <a href="https://linkedin.com/in/genesis-cruz-astu-rias" class="team-button" target="_blank">LinkedIn</a>
+                <a href="https://github.com/genesiscruzasturias" class="team-button team-button-github" target="_blank">GitHub</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="footer">
+    <div class="footer-list-image">
+        <ul class="footer-list ">
+            <li><a class="footer-link"  th:href="@{/about-brewhop}">About BrewHop</a></li>
+            <li><a class="footer-link"  th:href="@{/terms-of-service}">Terms of Service</a></li>
+        </ul>
+        <a href="#" onclick="scrollToTop(); return false;">
+            <img src="/img/brewhop.png" class="footer-image" alt="footer-image">
+        </a>
+    </div>
+
+    <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+
+</div>
+</body>
+</html>

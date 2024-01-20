@@ -2,6 +2,9 @@
 
 <!--Thymeleaf connection-->
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" lang="">
+<head>
+    <link rel="stylesheet" href="/css/sign-up.css">
+</head>
 <body>
 <div th:fragment="nav-bar" class="nav-bar">
     <div class="inner-nav">
@@ -39,7 +42,7 @@
     <div class="inner-nav">
         <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >
         <ul>
-            <li><a th:href="@{/}" th:method="post" class="custom-link">Home</a></li>
+            <li><a th:href="@{/}" th:method="post" class="home-link-3">Home</a></li>
         </ul>
     </div>
 </div>

@@ -1,6 +1,236 @@
-.review-card {
-    height: 100px;
-    width: 250px;
-    border: 1px solid transparent;
-    border-radius: 25px;
+
+/* CSS for navbar, ensuring it is at the top of the page */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10; /* Keep the navbar above other elements */
+    /* Other styles for navbar */
 }
+
+/* CSS for search bar, ensuring it is just below the navbar */
+.search {
+    margin-top: 60px; /* Adjust based on the actual height of your navbar */
+    padding-top: 30px ;
+    background: black;
+    position: relative;
+    z-index: 0; /* Below the navbar */
+    /* Other styles for search bar */
+}
+
+/* CSS for the main container */
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px; /* Adjust so that the container starts below the navbar and search bar */
+    /*height: 700px; !* Adjust height to account for the navbar and search bar *!*/
+    width: auto;
+    background-color: black;
+    /*overflow: hidden; !* Hide overflow to prevent scrolling *!*/
+
+}
+
+/* The hero section should occupy the remaining space */
+.hero {
+    display: flex;
+    flex-direction: row; /* Align children horizontally */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    padding: 40px; /* Add some padding */
+    box-sizing: border-box; /* Include padding and border in the element's size */
+    background-color: black;
+}
+
+/* Adjust left content styles */
+.hero-left {
+    flex: 0 0 40%; /* Set a fixed basis and prevent growing or shrinking */
+    padding-right: 20px; /* Space between text and image */
+    /* Your existing hero-left styles */
+
+}
+.hero-left h1 {
+    font-size: 40px;
+    color: #F0D397;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.hero-left p {
+    font-size: 20px;
+    color: #F0D397;
+    text-align: center;
+    margin-bottom: 20px;
+}
+/* Adjust right content styles */
+.hero-right {
+    flex: 0 0 60%; /* Set a fixed basis and prevent growing or shrinking */
+    display: flex;
+    justify-content: center; /* Align image to the start of the container */
+    /*align-items: center;*/
+    padding-left: 20px; /* Space to prevent text from touching the image */
+}
+
+/* Adjust the image size to fit within the hero section without scrolling */
+.hero-right img {
+    padding-left: 50px;
+    /*width: 400px;*/
+    /*height: 800px;*/
+    /* Adjust image width to be auto */
+    /*max-height: 100%; !* Adjust image height to fit within the hero-right container *!*/
+    object-fit: contain; /* Ensure the image maintains its aspect ratio */
+}
+/* CSS for the right side of the hero section */
+.hero-right img {
+    max-width: 60%;
+    max-height: 100vh; /* Adjust the image height to the viewport height */
+    object-fit: contain;
+    /* Other styles for hero-right */
+}
+
+
+#results {
+    display: grid;
+grid-template-columns: repeat(3, 1fr); /* Four columns */
+
+
+    flex-wrap: wrap;
+    justify-content: space-around; /* Evenly spaces the cards */
+    align-items: flex-start; /* Aligns cards at the top */
+    padding: 10px; /* Padding around the entire container */
+    gap: 20px; /* Spacing between cards */
+}
+
+    .brewery-card {
+        background-color: #2E3833;
+        color: #F0D397;
+        text-decoration: none;
+        flex: 0 0 calc(33.33% - 20px); /* Adjust the width for three columns considering the gap */
+        /*max-width: calc(33.33% - 20px); !* Adjust the width for three columns considering the gap *!*/
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 10px; /* Add margin between cards */
+        /*     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 15px;
+
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+
+        transition: all 0.3s ease;
+    }
+
+    .brewery-card:hover {
+        transform: scale(1.03); /* Scale effect on hover */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .brewery-card img {
+        width: 100%;
+        height: 150px; /* Adjust the height as needed */
+        object-fit: cover; /* Maintain aspect ratio and cover the container */
+        border-radius: 5px;
+    }
+
+    .brewery-info {
+        padding: 10px;
+    }
+
+    .view-brewery-btn {
+        margin-top: 10px; /* Add space between the content and the button */
+        background-color: #F0D397;
+        color: #D17C19;
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
+    }
+
+    .view-brewery-btn:hover {
+        background-color: #D17C19;
+        color: #2E3833;
+    }
+
+    .view-brewery-btn:active {
+        background-color: #F0D397; /* Change back to the original color on click */
+        color: #D17C19;
+        text-decoration: none; /* Remove underline on click */
+        height: 200px; /* Fixed height */
+        object-fit: cover; /* Maintain aspect ratio */
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+
+    .brewery-card .brewery-details {
+        text-align: center;
+    }
+
+    .brewery-card .brewery-details h2 {
+        font-size: 1.1em; /* Adjust font size */
+        margin-bottom: 10px;
+    }
+
+    .brewery-card .view-button {
+        background-color: dodgerblue;
+        color: white;
+
+        /*padding: 10px 15px;*/
+        margin-top: 10px;
+        border-radius: 5px;
+        text-align: center;
+        width: 80%;
+        transition: background-color 0.3s ease;
+    }
+
+    .brewery-card .view-button:hover {
+        background-color: #1a73e8; /* Slightly darker on hover */
+
+    }
+#h1 {
+    color: #F0D397;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+    /* CSS for paragraph text */
+    p {
+        font-size: 100px;
+        color: white; /* Change text color to white */
+    }
+
+    /* CSS for h1 heading */
+    h1 {
+        color: white;
+
+        font-weight: 800; /* Change the weight to bold or any other desired value */
+    }
+
+    /* CSS for h2 heading */
+    h2 {
+        color: #F0D397;
+        font-weight: 800; /* You can adjust this value to your preference */
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 768px) {
+        #results {
+            flex-direction: column; /* Stack cards in a column on smaller screens */
+        }
+
+        .brewery-card {
+            flex: 0 0 calc(100% - 20px); /* Full width on smaller screens */
+            max-width: calc(100% - 20px); /* Full width on smaller screens */
+            grid-template-columns: repeat(2, 1fr); /* Two columns on smaller screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        #results {
+            grid-template-columns: 1fr; /* One column on very small screens */
+        }
+    }

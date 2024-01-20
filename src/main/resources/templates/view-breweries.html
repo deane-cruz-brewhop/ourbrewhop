@@ -1,15 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>Brewhop</title>
+<!--    <header th:replace="partials/head.html :: header"></header>-->
+<!--    <link rel="stylesheet" href="/css/footer.css">-->
+    <link rel="stylesheet" href="/css/view-brewery.css">
+</head>
 <header th:replace="partials/head.html :: header"></header>
+
 <body>
-    <div th:unless="${#authorization.expression('isAuthenticated()')}">
-        <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
-    </div>
-    <div th:if="${#authorization.expression('isAuthenticated()')}">
-        <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
-    </div>
-    <div class="container">
-        <h1>Search Open Brewery DB</h1>
+<div class="navbar">
+    <nav th:unless="${#authorization.expression('isAuthenticated()')}">
+        <div th:insert="~{partials/nav-bar.html :: nav-bar}"></div>
+    </nav>
+    <nav th:if="${#authorization.expression('isAuthenticated()')}">
+        <div th:insert="~{partials/nav-bar.html :: nav-bar2}"></div>
+    </nav>
+</div>
+<div class="container">
+    <div class="search">
+        <h2>Search Breweries </h2>
+
         <input type="text" id="breweryName" placeholder="Brewery Name">
         <input type="text" id="city" placeholder="City">
         <input type="text" id="state" placeholder="State">
@@ -26,9 +37,34 @@
             <option value="proprietor">Proprietor</option>
             <option value="closed">Closed</option>
         </select>
-        <button onclick="searchBreweries()">Search</button>
+
+        <button class="search-button" onclick="searchBreweries()">Search</button>
+        <div class="brewery-cards-container">
+            <!--<h2>Results</h2>-->
+<!--            <div id="results"></div>-->
+        </div>
+
+<!--        <button onclick="searchBreweries()">Search</button>-->
+        <button th:if="${#authorization.expression('isAuthenticated()')}" onclick="searchByCurrentLocation()">Search by
+            Current Location
+        </button>
         <div id="results"></div>
+
+
     </div>
-    <script th:src="@{/js/brew.js}"></script>
+    <div class="hero" id="hero">
+        <div class="hero">
+            <div class="hero-left">
+                <h1>We are passionate about connecting you to the best breweries around.</h1>
+                <p>Explore our easy-to-use search feature to discover your new favorite spot, and share your experiences by leaving reviews. Join our community of beer enthusiasts and let's celebrate the art of brewing together. Cheers to finding the perfect pint!</p>
+            </div>
+            <div class="hero-right">
+                <img src="/img/hero.jpg" alt="Hero Image">
+            </div>
+        </div>
+</div>
+
+<script th:src="@{/js/brew.js}"></script>
+
 </body>
 </html>
