@@ -495,7 +495,11 @@ img {
     justify-content: center;
     padding: 15px;
 }
-.sign-in-page, .about-page, .terms-page{
+.sign-in-page{
     background-color: #EEFFDB;
+}
+.about-page, .terms-page{
+    background-color: #000000;
+    color: #D17C19;
 }
 
