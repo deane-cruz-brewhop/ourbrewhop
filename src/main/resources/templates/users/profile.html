@@ -18,28 +18,47 @@
 </div>
 
 
-
-<div class="card-main-profile profile-card">
-    <div class="card-stuff-profile">
-        <div class="pfp circle">Profile Picture</div>
-        <h1 class="username-h1"><span class="span-username" th:text="${user.username}"></span></h1>
-        <p class="email-p" th:text="${user.email}"></p>
-        <button class="edit-profile-btn"><a th:href="@{/profile/edit/{id}(id = ${ user.getId()})}">Edit Profile</a></button>
-    </div>
-</div>
-    <div class="container review-container">
-    <th:block th:each="review : ${userReviews}">
-        <div class="reviewBox-container">
-            <div class="card-main">
-                <div class="card-stuff">
-                    <img th:src="${review.image}" style="max-width: 200px; max-height: 200px;">
-                    <p class="rating" th:text="${review.rating}"></p>
-                    <h5 class="card-title" th:text="${review?.description}"></h5>
-                    <button class="card-button"><a th:href="@{/view-review/{id}(id=${review.id})}">View Review</a></button>
-                </div>
+<div class="row" style="display: flex">
+    <div class="column">
+        <div class="card-main-profile profile-card">
+            <div class="card-stuff-profile">
+                <div class="pfp circle">Profile Picture</div>
+                <h1 class="username-h1"><span class="span-username" th:text="${user.username}"></span></h1>
+                <p class="email-p" th:text="${user.email}"></p>
+                <button class="edit-profile-btn"><a th:href="@{/profile/edit/{id}(id = ${ user.getId()})}">Edit Profile</a></button>
             </div>
         </div>
-    </th:block>
+    </div>
+    <div class="column">
+        <div class="visited-text">
+        <h1>Recently Visited Breweries</h1>
+    </div>
+    <div class="container review-container">
+
+        <th:block th:each="review, iterStat : ${userReviews}">
+            <!-- Use th:if to check if the index is less than 5 -->
+            <div th:if="${iterStat.index < 5}" class="reviewBox-container">
+                <div class="review-card">
+                    <div class="card-stuff">
+                        <img th:src="${review.image}" class="review-image">
+                        <p class="rating" th:text="${review.rating}"></p>
+                        <h5 class="card-title" th:text="${review?.description}"></h5>
+                        <button class="card-button">
+                            <!-- Link to view individual review -->
+                            <a th:href="@{/view-review/{id}(id=${review.id})}">View Review</a>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </th:block>
+</div>
+        <div class="all-reviews-btn">
+            <button class="view-all-button">
+                <!-- Link to another page with all reviews -->
+                <a th:href="@{/all-reviews}">View All Reviews</a>
+            </button>
+        </div>
+    </div>
 </div>
 
 

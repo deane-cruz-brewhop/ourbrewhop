@@ -112,7 +112,7 @@ function fetchAndDisplayBreweries(url) {
             });
         })
         .catch(error => console.error('Error:', error));
-}
+})
 
 
 function getScreenshotUrl(websiteUrl) {
@@ -123,4 +123,5 @@ function openBreweryInfo(event) {
     const websiteUrl = event.target.dataset.url;
     console.log(websiteUrl);
     window.open('view_brewery.html?url=' + encodeURIComponent(websiteUrl), '_blank');
+}
 }

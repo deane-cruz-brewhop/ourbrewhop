@@ -38,7 +38,7 @@ public class SecurityConfiguration {
         http.authorizeHttpRequests((requests) -> requests
 
 
-                        .requestMatchers("/reviews/create", "/review/edit","/profile", "/create", "/profile/edit/{id}", "/profile/edit", "/profile/edit-review", "/view-review/{id}", "review/delete", "/delete-profile").authenticated()
+                        .requestMatchers("/reviews/create", "/review/edit","/profile", "/create", "/profile/edit/{id}", "/profile/edit", "/profile/edit-review", "/view-review/{id}", "review/delete", "/delete-profile", "/all-reviews").authenticated()
 
                         .requestMatchers("/", "/reviews", "/reviews/*", "/sign-up", "/sign-in", "/view-breweries", "/view-brewery", "/meet-the-team", "about-brewhop", "terms-of-service").permitAll()
 
