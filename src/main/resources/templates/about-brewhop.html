@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="/css/main.css">
-    <title>Title</title>
+    <title>About BrewHop</title>
 </head>
 <header th:replace="~{partials/head.html :: header}"></header>
 <body class="about-page">
@@ -13,17 +13,35 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
-<h1 class="about-title">About BrewHop</h1>
-<p>Welcome to BrewHop, where every sip is a journey and every pint is an adventure. Our story begins with a passion for craft brewing, a love for exploration, and a commitment to connecting enthusiasts with the finest breweries around the world.</p>
-<h2>Our Journey</h2>
-<p>Founded by a group of dedicated beer aficionados, BrewHop emerged from the desire to create a platform that celebrates the artistry of brewing. We embarked on a journey to discover the hidden gems, the local treasures, and the innovative masterpieces that define the world of craft beer.</p>
-<h2>Discover, Share, Connect</h2>
-<p>Discover the finest breweries, each with its distinct character and charm. Unleash the power of our intuitive search tool, designed to help you find your next favorite haven. Whether you're a seasoned beer connoisseur or a curious newcomer, BrewHop invites you to explore, indulge, and share your tales of flavor.</p>
-<h2>Join the Brotherhood</h2>
-<p>Raise a toast with us. Join our brotherhood of beer enthusiasts who appreciate the art of brewing, the joy of discovery, and the thrill of sharing experiences. BrewHop is your passport to the world of craft brews and global adventures.</p>
-<h2>Cheers to Flavor and Discovery</h2>
-<p>Embark on a journey with BrewHop, where every sip is an invitation to savor the diversity of flavors, and every brewery visit is a celebration of craftsmanship. Cheers to the pursuit of the perfect pint and the joy of crafting connections through the love of beer.
-    Discover, share, and savor the world of craft brews with BrewHop – your ultimate guide to flavor and discovery.</p>
+<div class="page-wrapper">
+    <div class="container">
+        <div class="row" style="display: flex">
+            <div class="img-col">
+                <img src="/img/pexels-percival-ian-muico-2835547.jpg" class="about-img" style="width: 400px; height: 500px; border-radius: 0.02%; padding: 20px">
+            </div>
+            <div class="col-lg-8 offset-lg-2">
+                <h1 class="about-title">About BrewHop</h1>
+                <p>Welcome to BrewHop, the ultimate platform for beer enthusiasts to share, discover, and celebrate the world of breweries. Whether you're a seasoned beer connoisseur or a curious newcomer, BrewHop is your go-to guide for exploring the diverse and exciting universe of craft brews.</p>
+
+                <h2 class="about-title">Our Mission</h2>
+                <p>At BrewHop, our mission is to connect beer lovers around the globe and provide a space where they can share their experiences, insights, and reviews about breweries. We believe in the power of community and the joy that comes from discovering new flavors and hidden gems in the world of craft beer.</p>
+                <div class="features-section">
+                    <div class="feature">
+                        <h3 class="about-title">Explore Breweries</h3>
+                        <p>Discover a wide range of breweries, each with its unique character and offerings. From local favorites to global treasures, our platform is your passport to a world of beer exploration.</p>
+                    </div>
+                    <div class="feature">
+                        <h3 class="about-title">Share Your Reviews</h3>
+                        <p>Share your thoughts and reviews about breweries you've visited. Help fellow beer enthusiasts find hidden gems and make informed choices on their beer journey.</p>
+                    </div>
+                    <div class="feature">
+                        <h3 class="about-title">Connect with the Community</h3>
+                        <p>Connect with like-minded individuals who share your passion for craft beer. Join discussions, exchange recommendations, and become part of the BrewHop community.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+
 <div class="footer">
     <div class="footer-list-image">
         <ul class="footer-list ">
@@ -37,6 +55,7 @@
 
     <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
 
+</div>
 </div>
 </body>
 </html>

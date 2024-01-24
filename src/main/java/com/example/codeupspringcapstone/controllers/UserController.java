@@ -113,6 +113,12 @@ public class UserController {
         userDao.deleteById(loggedInUser.getId());
         return "redirect:/sign-in";
     }
+    @GetMapping("/all-reviews")
+    public String displayAllReviews(Model model) {
+        List<Review> allReviews = reviewRepository.findAll(); // Change to findAll() to get all reviews
+        model.addAttribute("allReviews", allReviews);
+        return "users/all-reviews"; // Remove the redirect and return the correct view name
+    }
 }
 
 
