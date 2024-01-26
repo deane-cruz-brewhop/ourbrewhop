@@ -2,13 +2,13 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="">
 <head>
     <header th:replace="~{partials/head.html :: header}"></header>
-    <link rel="stylesheet" href="/css/sign-up.css">
+    <link rel="stylesheet" href="/css/sign-in.css">
     <title>Sign Up</title>
 </head>
 <body class="sign-up-page">
 <nav th:insert="~{partials/nav-bar.html :: nav-bar3}"></nav>
 <div class="content-container">
-    <h1>CREATE YOUR ACCOUNT NOW!</h1>
+    <h1 class="create-account-text">CREATE YOUR ACCOUNT NOW!</h1>
     <div class="card">
         <form th:action="@{/sign-up}" method="POST" th:object="${user}" onsubmit="validatePassword(event)">
         <div class="form-group">
@@ -29,7 +29,7 @@
         </div>
         <p id="password-error" class="error"></p>
 
-        <input value="Sign me up!" type="submit" />
+        <input class="sign-up-button" value="Sign me up!" type="submit" />
     </form>
     <p class="account-text">Already have an account? <a href="/sign-in" class="sign-in-link">Sign in here!</a></p>
 </div>

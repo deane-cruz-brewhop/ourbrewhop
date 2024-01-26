@@ -198,7 +198,7 @@ nav {
 
 /*Index.html styling*/
 body {
-    background-color: #464853;
+    background-color: #EEFFDB;
 }
 .hero-top {
     /*display: flex;*/
@@ -634,4 +634,153 @@ img {
 
 .all-reviews-card .card-button {
     margin-top: auto; /* Align the button to the bottom of the card */
+}
+
+@media screen and (max-width: 1200px) {
+    .container-jumbo {
+        max-width: 70%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    /*nav {*/
+    /*    width: 100%;*/
+    /*    padding: 10px;*/
+    /*    box-sizing: border-box;*/
+    /*    position: fixed;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    z-index: 700;*/
+    /*}*/
+    .container-jumbo {
+        max-width: 80%;
+    }
+
+    .jumbotron h1 {
+        font-size: 2em;
+    }
+
+    .lead {
+        font-size: 1.1em;
+    }
+}
+@media screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 700;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+
+    .carousel-container {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin-top: 150px;
+    }
+
+    .carousel {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin: 0 auto;
+    }
+
+    .video-slide {
+        width: 100%;
+        display: block;
+        max-height: 100%;
+    }
+
+    .video-full-width {
+        width: 100%;
+        display: block;
+    }
+    .container-jumbo {
+        margin-top: 20px;
+        max-width: 90%;
+    }
+
+    .jumbotron h1 {
+        font-size: 1.8em;
+    }
+
+    .lead {
+        font-size: 1em;
+    }
+    .footer-list-image{
+        position: relative;
+        display: flex;
+        left: 60px;
+    }
+    @media screen and (max-width: 425px) {
+        .nav-list{
+            font-size: 10px;
+        }
+        .brewhop-logo, .footer-image{
+            width: 75px;
+            height: 100px
+        }
+        .container-jumbo {
+            max-width: 100%;
+        }
+
+        .jumbotron h1 {
+            font-size: 1.5em;
+        }
+
+        .lead {
+            font-size: 0.9em;
+        }
+        .footer-list-image{
+            position: relative;
+            display: flex;
+            left: 100px;
+        }
+        .footer-list, .footer-paragraph{
+            font-size: 10px;
+            padding: 5px;
+        }
+        .carousel-container {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            display: block;
+            margin-top: 105px;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .video-slide {
+            width: 100%;
+            display: block;
+            max-height: 100%;
+        }
+
+        .video-full-width {
+            width: 100%;
+            display: block;
+        }
+
+    }
+
 }
