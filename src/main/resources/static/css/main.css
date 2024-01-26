@@ -642,7 +642,16 @@ img {
     }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1024px) {
+    /*nav {*/
+    /*    width: 100%;*/
+    /*    padding: 10px;*/
+    /*    box-sizing: border-box;*/
+    /*    position: fixed;*/
+    /*    top: 0;*/
+    /*    left: 0;*/
+    /*    z-index: 700;*/
+    /*}*/
     .container-jumbo {
         max-width: 80%;
     }
