@@ -299,11 +299,11 @@ body {
 /*    background-color: white;*/
 /*    margin-bottom: 10px;*/
 /*}*/
-.profile-page, .all-reviews-page{
-    background-color: #EEFFDB;
-    border: 3px solid #8FA399;
+/*.profile-page, .all-reviews-page{*/
+/*    background-color: #EEFFDB;*/
+/*    border: 3px solid #8FA399;*/
 
-}
+/*}*/
 .all-reviews-container{
     display: flex;
 }
@@ -643,15 +643,45 @@ img {
 }
 
 @media screen and (max-width: 1024px) {
-    /*nav {*/
-    /*    width: 100%;*/
-    /*    padding: 10px;*/
-    /*    box-sizing: border-box;*/
-    /*    position: fixed;*/
-    /*    top: 0;*/
-    /*    left: 0;*/
-    /*    z-index: 700;*/
-    /*}*/
+    body {
+        margin: 0; /* Remove default body margin */
+    }
+    nav {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 700;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+    .profile-content{
+        margin-top: 150px;
+    }
+    .content-container{
+        margin-top: 150px;
+    }
+    .profile-page {
+        /*border: 3px solid #8FA399;*/
+        min-height: 100vh;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .column-container {
+        flex: 1; /* This ensures the columns take up equal width */
+    }
+
     .container-jumbo {
         max-width: 80%;
     }
@@ -730,6 +760,10 @@ img {
     @media screen and (max-width: 425px) {
         .nav-list{
             font-size: 10px;
+        }
+        .profile-content{
+            margin-top: 150px;
+            display: block;
         }
         .brewhop-logo, .footer-image{
             width: 75px;
