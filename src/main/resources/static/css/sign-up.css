@@ -117,88 +117,37 @@ a.sign-in-link:hover {
 .account-text{
     padding-top: 10px;
 }
-@media screen and (max-width: 768px) {
-    nav {
-        width: 100%;
-        padding: 10px;
-        box-sizing: border-box;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 700;
-    }
-
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-
-    .nav-list li {
-        padding: 10px;
-    }
-
-    .content-container{
-        margin-top: 150px;
-    }
     @media screen and (max-width: 425px) {
-        .nav-list{
+        .nav-list {
             font-size: 10px;
         }
-        h1{
+
+        .create-account-text {
             font-size: 20px;
         }
-        .content-container{
+
+        .content-container {
             width: auto;
             padding: 5px;
             margin-left: 5px;
             border: 1px solid black;
         }
-        .card{
+
+        .card {
             font-size: 14px;
             width: 75%;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .sign-up-button{
-            display: flex;
-            padding: 8px;
-            margin-left: 80px;
-            position: relative;
-            right: 10px;
-        }
-        p{
-            margin-top: 10px;
-        }
-    }
-    @media screen and (max-width: 375px) {
-        .nav-list{
-            font-size: 10px;
-        }
-        .h1{
-            display: flex;
-            position: relative;
-            left: 10px;
-            font-size: 15px;
-        }
-        .content-container{
-            width: auto;
-            padding: 5px;
-            /*margin-left: 5px;*/
-            justify-content: center;
-        }
-        .card{
-            font-size: 14px;
+
+        .sign-up-button {
+            display: block;
             width: 75%;
-        }
-        .sign-up-button{
-            width: 65%;
-            display: flex;
+            margin: 10px auto;
             padding: 8px;
-            margin-left: 80px;
-            position: relative;
-            right: 15px;
         }
-        p{
-            margin-top: 10px;
+
+        .account-text {
+            text-align: center;
         }
-    }
 }

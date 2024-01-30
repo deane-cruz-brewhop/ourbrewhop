@@ -20,6 +20,8 @@ body {
 
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .wrapper {
@@ -227,13 +229,18 @@ body {
 .footer{
     background-color: #9A8873;
     color: #161513;
-    text-align: -webkit-center;
-    padding-top: 10px;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
 }
 .footer-list-image{
     display: flex;
     justify-content: center;
     margin-right: 300px;
+    max-width: 1200px;
+
 }
 .footer-list{
     justify-content: flex-start;
@@ -301,11 +308,11 @@ body {
 /*    background-color: white;*/
 /*    margin-bottom: 10px;*/
 /*}*/
-.profile-page, .all-reviews-page{
-    background-color: #EEFFDB;
-    border: 3px solid #8FA399;
+/*.profile-page, .all-reviews-page{*/
+/*    background-color: #EEFFDB;*/
+/*    border: 3px solid #8FA399;*/
 
-}
+/*}*/
 .all-reviews-container{
     display: flex;
 }
@@ -331,7 +338,7 @@ body {
    align-items: stretch;
     justify-content: space-evenly;
     max-width: 1000px;
-    margin-left: 150px;
+    margin-left: 50px;
     margin-top: 50px;
 }
 
@@ -521,10 +528,39 @@ img {
 .review-card {
     animation: slideInRight 0.5s ease-out forwards; /* Adjust the animation duration and timing function */
 }
-
+.profile-card,
+.review-card {
+    width: 200px; /* Adjust the width as needed */
+    height: 300px; /* Adjust the height as needed */
+}
 .card-main,
 .card-main-profile {
     animation: slideIn 0.5s ease-out forwards; /* Adjust the animation duration and timing function */
+}
+.all-reviews-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center child elements horizontally */
+}
+
+.visited-text {
+    margin-top: 20px;
+    color: #D17C19;
+    font-size: 2rem;
+    margin-right: 100px;
+}
+
+.review-container {
+    display: flex;
+    max-width: 1000px;
+    margin-top: 20px;
+
+    overflow-x: auto; /* Add a horizontal scrollbar if reviews overflow */
+}
+
+.review-card {
+    /* Your existing styles for review cards */
+    margin-right: 20px; /* Add margin between review cards */
 }
 /*.sign-in-page{*/
 /*    background-color: #EEFFDB;*/
@@ -647,7 +683,12 @@ img {
 .all-reviews-card .card-button {
     margin-top: auto; /* Align the button to the bottom of the card */
 }
-
+@media screen and (max-width: 1440px){
+    .footer{
+        display: flex;
+        position: unset;
+    }
+}
 @media screen and (max-width: 1200px) {
     .container-jumbo {
         max-width: 70%;
@@ -655,15 +696,45 @@ img {
 }
 
 @media screen and (max-width: 1024px) {
-    /*nav {*/
-    /*    width: 100%;*/
-    /*    padding: 10px;*/
-    /*    box-sizing: border-box;*/
-    /*    position: fixed;*/
-    /*    top: 0;*/
-    /*    left: 0;*/
-    /*    z-index: 700;*/
-    /*}*/
+    body {
+        margin: 0; /* Remove default body margin */
+    }
+    nav {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 700;
+    }
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    .nav-list li {
+        padding: 10px;
+    }
+    .profile-content{
+        margin-top: 150px;
+    }
+    .content-container{
+        margin-top: 150px;
+    }
+    .profile-page {
+        /*border: 3px solid #8FA399;*/
+        min-height: 100vh;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+
+    .column-container {
+        flex: 1; /* This ensures the columns take up equal width */
+    }
+
     .container-jumbo {
         max-width: 80%;
     }
@@ -674,6 +745,20 @@ img {
 
     .lead {
         font-size: 1.1em;
+    }
+    .team-page{
+        margin-top: 180px;
+    }
+    .team-image{
+        width: 200px;
+        height: 250px;
+    }
+    .about-page{
+        margin-top: 175px;
+        padding: 0;
+    }
+    .footer{
+        max-width: 1024px;
     }
 }
 @media screen and (max-width: 768px) {
@@ -739,60 +824,171 @@ img {
         display: flex;
         left: 60px;
     }
+    /*.profile-content{*/
+    /*    margin-top: 10px;*/
+    /*}*/
+    .visited-text {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 20px;
+    }
+
+    .review-container {
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    .review-card {
+        margin-right: 0;
+    }
+
+    .all-reviews-btn {
+        margin-right: 0;
+        padding-top: 10px;
+    }
+
+    .all-reviews-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 90%; /* Adjust as needed */
+        margin: 0 auto;
+    }
+
+    .all-reviews-card {
+        flex: 0 1 calc(50% - 20px); /* Adjust as needed */
+        width: calc(50% - 20px); /* Adjust as needed */
+        height: 375px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        overflow: hidden;
+        background-color: #2E3833;
+        color: #F0D397;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+    .about-img {
+        width: 100%;
+        height: auto;
+    }
+
+    .col-lg-8 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .footer{
+        max-width: 768px;
+    }
     @media screen and (max-width: 425px) {
-        .nav-list{
-            font-size: 10px;
-        }
-        .brewhop-logo, .footer-image{
-            width: 75px;
-            height: 100px
-        }
-        .container-jumbo {
-            max-width: 100%;
-        }
-
-        .jumbotron h1 {
-            font-size: 1.5em;
-        }
-
-        .lead {
-            font-size: 0.9em;
-        }
-        .footer-list-image{
-            position: relative;
+        .nav-list {
             display: flex;
-            left: 100px;
-        }
-        .footer-list, .footer-paragraph{
-            font-size: 10px;
-            padding: 5px;
-        }
-        .carousel-container {
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            display: block;
-            margin-top: 105px;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
         }
 
-        .carousel {
-            position: relative;
+        .nav-list-left,
+        .nav-list-right {
             width: 100%;
-            overflow: hidden;
-            margin: 0 auto;
+            text-align: center;
+            margin-top: 10px;
         }
 
-        .video-slide {
-            width: 100%;
-            display: block;
-            max-height: 100%;
+        .nav-list-left li,
+        .nav-list-right li {
+            margin-bottom: 10px;
         }
 
-        .video-full-width {
-            width: 100%;
-            display: block;
+        .brewhop-logo {
+            margin-top: 10px;
         }
 
+        .hero-top {
+            padding-top: 20px; /* Adjust as needed */
+        }
+
+        .jumbotron {
+            text-align: center;
+        }
+
+        .jumbo-image-div {
+            text-align: center;
+        }
+
+        .jumbo-image {
+            width: 100%; /* Make the image responsive */
+        }
+
+        .footer-list-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            margin-right: 155px;
+            padding-bottom: 10px;
+            width: 425px;
+        }
+
+        .footer-image {
+            display: flex;
+            margin-top: 0; /* Adjust as needed */
+            max-width: 150px;
+            height: 150px/* Ensure the logo doesn't exceed its container */
+        }
+        .profile-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile-content{
+            display: flex;
+        }
+
+        .nav-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color:  #9A8873;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .row.profile-content {
+            width: 100%;
+            max-width: 80%; /* Adjust the max-width as needed */
+            padding-top: 20px; /* Adjust as needed to avoid overlapping with the navbar */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .column-container {
+            width: 100%;
+        }
+
+        .card-main-profile {
+            margin-bottom: 20px; /* Adjust as needed */
+        }
+
+        .container.review-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review-card {
+            width: 100%;
+            max-width: 90%; /* Adjust the max-width as needed */
+            margin-bottom: 10px; /* Adjust as needed */
+        }
+        .view-all-button {
+            margin-top: 10px;
+            margin-right: 30px;
+        }
     }
 
 }
@@ -806,7 +1002,7 @@ review-all-cards{
     margin-left: 150px;
     margin-top: 50px;
 }
-rate:not(:checked) > input {
+/* rate:not(:checked) > input {
     position:absolute;
     top:-9999px;
 }
@@ -836,3 +1032,4 @@ rate:not(:checked) > input {
 .rate > label:hover ~ input:checked ~ label {
     color: #c59b08;
 }
+ */

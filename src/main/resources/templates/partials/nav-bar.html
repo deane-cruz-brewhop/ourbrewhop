@@ -24,11 +24,11 @@
 
 <div th:fragment="nav-bar2" class="nav-bar">
     <div class="inner-nav">
-        <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >
         <ul class="nav-list nav-list-left">
           <li><a th:href="@{/}" th:method="post" class="custom-link">Home</a></li>
           <li><a th:href="@{/view-breweries}" th:method="post" class="custom-link">Search</a></li>
         </ul>
+        <img src="/img/brewhop.png" class="brewhop-logo" alt="brewhop" >
         <ul class="nav-list nav-list-right">
           <li><a th:href="@{/profile}" th:method="get" class="custom-link">Profile</a></li>
           <li><form th:action="@{/logout}" th:method="post">
