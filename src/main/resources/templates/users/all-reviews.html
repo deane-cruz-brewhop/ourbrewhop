@@ -16,11 +16,11 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
   <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
-<div class="row" style="display: flex">
+<div class="all-reviews-row" style="display: flex">
 
-  <div class="col">
+  <div class="-all-reviews-col">
     <div style="justify-content: center; display: flex">
-    <h1 style="font-size: 20px; color: #2E3833; padding: 10px;">Your Visited Breweries</h1>
+    <h1 class="visited-text">Your Visited Breweries</h1>
   </div>
     <div class="container all-reviews-container">
       <th:block th:each="review : ${allReviews}">

@@ -99,9 +99,9 @@ input[type="submit"]:active {
     margin-left: 130px; /* Align with input fields */
 }
 
-a {
-    color: dodgerblue;
-}
+/*a {*/
+/*    color: dodgerblue;*/
+/*}*/
 a.sign-in-link {
     /*background-color: #F0D397;*/
     color: #D17C19;
@@ -163,9 +163,16 @@ a.sign-in-link:hover {
 
         .account-text {
             text-align: center; /* Center the text for small screens */
+            margin-left: 20px;
+            font-size: 24px;
         }
-        .sign-up-button{
-            width: 50px;
+        .sign-up-button {
+            display: flex;
+            position: relative;
+            right: 20px;
+            width: 40%;
+            margin: 10px auto;
+            padding: 8px;
         }
     }
 }

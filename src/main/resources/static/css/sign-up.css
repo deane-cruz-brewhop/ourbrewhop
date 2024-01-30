@@ -5,6 +5,7 @@
     /*background-image: url("static/img/pexels-pixabay-159291.jpg");*/
 }
 
+
 .content-container {
     height: calc(100vh - 150px); /* Adjust height considering the nav bar height */
     display: flex;
@@ -99,9 +100,9 @@ input[type="submit"]:active {
     margin-left: 130px; /* Align with input fields */
 }
 
-a {
-    color: dodgerblue;
-}
+/*a {*/
+/*    color: dodgerblue;*/
+/*}*/
 a.sign-in-link {
     /*background-color: #F0D397;*/
     color: #D17C19;
@@ -139,8 +140,10 @@ a.sign-in-link:hover {
         }
 
         .sign-up-button {
-            display: block;
-            width: 75%;
+            display: flex;
+            position: relative;
+            right: 20px;
+            width: 60%;
             margin: 10px auto;
             padding: 8px;
         }
