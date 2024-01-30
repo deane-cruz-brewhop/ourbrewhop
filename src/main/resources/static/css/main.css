@@ -758,63 +758,60 @@ img {
         left: 60px;
     }
     @media screen and (max-width: 425px) {
-        .nav-list{
-            font-size: 10px;
-        }
-        .profile-content{
-            margin-top: 150px;
-            display: block;
-        }
-        .brewhop-logo, .footer-image{
-            width: 75px;
-            height: 100px
-        }
-        .container-jumbo {
-            max-width: 100%;
-        }
-
-        .jumbotron h1 {
-            font-size: 1.5em;
-        }
-
-        .lead {
-            font-size: 0.9em;
-        }
-        .footer-list-image{
-            position: relative;
+        .nav-list {
             display: flex;
-            left: 100px;
-        }
-        .footer-list, .footer-paragraph{
-            font-size: 10px;
-            padding: 5px;
-        }
-        .carousel-container {
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            display: block;
-            margin-top: 105px;
+            flex-direction: column;
+            align-items: center;
+            padding: 10px;
         }
 
-        .carousel {
-            position: relative;
+        .nav-list-left,
+        .nav-list-right {
             width: 100%;
-            overflow: hidden;
-            margin: 0 auto;
+            text-align: center;
+            margin-top: 10px;
         }
 
-        .video-slide {
-            width: 100%;
-            display: block;
-            max-height: 100%;
+        .nav-list-left li,
+        .nav-list-right li {
+            margin-bottom: 10px;
         }
 
-        .video-full-width {
-            width: 100%;
-            display: block;
+        .brewhop-logo {
+            margin-top: 10px;
+        }
+
+        .hero-top {
+            padding-top: 20px; /* Adjust as needed */
+        }
+
+        .jumbotron {
+            text-align: center;
+        }
+
+        .jumbo-image-div {
+            text-align: center;
+        }
+
+        .jumbo-image {
+            width: 100%; /* Make the image responsive */
+        }
+
+        .footer-list-image {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            margin-right: 155px;
+            padding-bottom: 10px;
+        }
+
+        .footer-image {
+            display: flex;
+            margin-top: 0; /* Adjust as needed */
+            max-width: 150px;
+            height: 150px/* Ensure the logo doesn't exceed its container */
         }
 
     }
-
 }
