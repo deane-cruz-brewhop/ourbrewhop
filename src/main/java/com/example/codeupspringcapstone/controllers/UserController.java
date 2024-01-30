@@ -1,5 +1,6 @@
 package com.example.codeupspringcapstone.controllers;
 
+import com.example.codeupspringcapstone.models.AvatarImage;
 import com.example.codeupspringcapstone.models.Review;
 import com.example.codeupspringcapstone.models.User;
 import com.example.codeupspringcapstone.repositories.ReviewRepository;
@@ -88,7 +89,7 @@ public class UserController {
         model.addAttribute("userReviews", userReview);
         return "users/profile";
     }
-
+//^^^^^^^^^^^^^^^^^^^^^^^these work without an image
     @GetMapping("/profile/edit/{id}")
     public String editProfile(@PathVariable Long id, Model model) {
         User user = userDao.getUsersById(id);
@@ -105,8 +106,43 @@ public class UserController {
         userDao.save(user);
         return "redirect:/profile";
     }
+//
+//^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
+//    /^--^--^--^--^--^--^--^--^--^--^--^--^--^--^--^--^-
+    //    not working yet trying to be able to edit profile with image
+//@GetMapping("/profile/edit/{id}")
+//public String editProfile(@PathVariable Long id, Model model) {
+//    User user = userDao.getUsersById(id);
+//    AvatarImage avatarImage = // Retrieve the AvatarImage entity for the user
+//
+//            String avatarImageUrl = (avatarImage != null) ? avatarImage.getImage() : null;
+//
+//    model.addAttribute("user", user);
+//    model.addAttribute("avatarImageUrl", avatarImageUrl);
+//    return "users/edit-profile";
+//}
+
+//    not working yet trying to be able to edit profile with image
+//    @PostMapping("/profile/edit")
+//    public String updateProfile(@ModelAttribute User user, @RequestParam(required = false) String profileImageUrl) {
+//        // Update user details
+//        String hashedPassword = passwordEncoder.encode(user.getPassword());
+//        user.setPassword(hashedPassword);
+//        userDao.save(user);
+//
+//        // Update AvatarImage entity
+//        if (profileImageUrl != null && !profileImageUrl.isEmpty()) {
+//            AvatarImage avatarImage = // Retrieve or create a new AvatarImage entity for the user
+//                    avatarImage.setImage(profileImageUrl);
+//            avatarImage.setUser(user);
+//            // Save the AvatarImage entity
+//        }
+//
+//        return "redirect:/profile";
+//    }
+//-^--^--^--^--^--^--^--^--^--^--^--^--^--^--^--^--^-
     @PostMapping("/delete-profile")
     public String deleteProfile() {
         User loggedInUser = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();

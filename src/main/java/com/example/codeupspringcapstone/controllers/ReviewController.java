@@ -69,9 +69,9 @@ public String createPost(@ModelAttribute Review review, Model model, @RequestPar
     newReview.setBrewery(breweryId);
     newReview.setUser(currentUser);
     newReview.setDescription(review.getDescription());
-    // Set the image URL received from the form
-    newReview.setImage(review.getImage());  // Assuming 'review.getImage()' gets the image URL from the form
+      newReview.setImage(review.getImage());  // Assuming 'review.getImage()' gets the image URL from the form
     newReview.setRating(review.getRating());  // Set rating from the form
+        newReview.setBreweryName(review.getBreweryName());  // Set brewery name from the form
     // Save the new review
     reviewRepository.save(newReview);
         model.addAttribute("review", newReview);

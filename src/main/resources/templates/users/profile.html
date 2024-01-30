@@ -4,6 +4,11 @@
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="_csrf" th:content="${_csrf.token}" />
+    <style>
+        .fa-star.checked {
+            color: #deb217;
+        }
+    </style>
 </head>
 <header th:replace="~{partials/head.html :: header}">
 </header>
@@ -41,7 +46,18 @@
                 <div class="review-card">
                     <div class="card-stuff">
                         <img th:src="${review.image}" class="review-image">
-                        <p class="rating" th:text="${review.rating}"></p>
+
+                        <p class="rating"  hidden="hidden" th:text="${review.rating}"></p>
+                        <p th:hidden="true" class="rating" th:text="${review.getRating()}"></p>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+
+                        <div class="brewery-name" th:text="${review.breweryName}">
+                            </div>
                         <h5 class="card-title" th:text="${review?.description}"></h5>
                         <button class="card-button">
                             <!-- Link to view individual review -->
@@ -49,7 +65,7 @@
                         </button>
                     </div>
                 </div>
-            </div>
+
         </th:block>
 </div>
         <div class="all-reviews-btn">
@@ -61,5 +77,9 @@
     </div>
 </div>
 
+
+<!--    <h3 class="user-reviews-text">User Reviews</h3>-->
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<script type="module" src="/js/stars.js"></script>
 </body>
 </html>

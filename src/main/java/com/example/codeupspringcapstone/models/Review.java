@@ -1,8 +1,6 @@
 package com.example.codeupspringcapstone.models;
-
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -12,10 +10,8 @@ public class Review {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-
     private Long id;
 
-//    @Id
     @Column(name = "rating")
     private int rating;
 
@@ -28,22 +24,25 @@ public class Review {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "review")
     private List<Likes> likes;
 
-   @Column(name = "brewery_id", nullable = true)
+    @Column(name = "brewery_id", nullable = true)
     private String brewery;
+
+    @Column(name = "brewery_name", nullable = true)
+    private String breweryName; // New field for brewery name
 
     @ManyToOne
     @JsonManagedReference
-    @JoinColumn (name = "user_id")
+    @JoinColumn(name = "user_id")
     private User user;
 
-    //    CREATING CONSTRUCTORS
-    public Review(){}
+    // Constructors
+
+    public Review() {}
     public Review(int rating, String image, String description) {
         this.rating = rating;
         this.image = image;
         this.description = description;
     }
-
     public Review(User user, int rating, String image, String description) {
         this.user = user;
         this.rating = rating;
@@ -57,21 +56,45 @@ public class Review {
         this.image = image;
         this.description = description;
     }
-
-    public Review(Long id, int rating, String image, String description, List<Likes> likes, String brewery, User user) {
+    public Review(long id, int rating, String image, String description, List<Likes> likes) {
+        this.id = id;
+        this.rating = rating;
+        this.image = image;
+        this.description = description;
+        this.likes = likes;
+    }
+    public Review(long id, int rating, String image, String description, List<Likes> likes, String brewery) {
         this.id = id;
         this.rating = rating;
         this.image = image;
         this.description = description;
         this.likes = likes;
         this.brewery = brewery;
+    }
+    public Review(long id, int rating, String image, String description, List<Likes> likes, String brewery, String breweryName) {
+        this.id = id;
+        this.rating = rating;
+        this.image = image;
+        this.description = description;
+        this.likes = likes;
+        this.brewery = brewery;
+        this.breweryName = breweryName; // Set brewery name
+    }
+    public Review(long id, int rating, String image, String description, List<Likes> likes, String brewery, String breweryName, User user) {
+        this.id = id;
+        this.rating = rating;
+        this.image = image;
+        this.description = description;
+        this.likes = likes;
+        this.brewery = brewery;
+        this.breweryName = breweryName; // Set brewery name
         this.user = user;
     }
 
+    // Getters and setters
     public Review(String description) {
         this.description = description;
     }
-
     public List<Likes> getLikes() {
         return likes;
     }
@@ -88,42 +111,43 @@ public class Review {
         this.brewery = brewery;
     }
 
+    public String getBreweryName() {
+        return breweryName;
+    }
+
+    public void setBreweryName(String breweryName) {
+        this.breweryName = breweryName;
+    }
     public void setRating (int rating) {
         this.rating = rating;
     }
-
     public int getRating () {
         return rating;
     }
-
     public void setId(Long id) {
         this.id = id;
     }
-
-    public Long getId() {
+    public Long getId () {
         return id;
     }
-
-    public void setImage(String image) {
+    public void setImage (String image) {
         this.image = image;
     }
-
-    public String getImage() {
+    public String getImage () {
         return image;
     }
-
-    public void setDescription(String description) {
+    public void setDescription (String description) {
         this.description = description;
     }
-
-    public String getDescription() {
+    public String getDescription () {
         return description;
     }
 
-    public void setUser (User user) { this.user = user; }
+    public void setUser(User user) {
+        this.user = user;
+    }
 
-    public User getUser() { return user; }
-
-//    public void setId(String breweryId) {
-//    }
+    public User getUser() {
+        return user;
+    }
 }
