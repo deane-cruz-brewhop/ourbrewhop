@@ -2,45 +2,154 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Edit Review</title>
     <header th:replace="~{partials/head.html :: header}"></header>
+    <link rel="stylesheet" href="/css/create-review.css"> <!-- Link to your CSS file -->
+    <style>
+        body {
+            background-color: black;
+        }
+        .review-edit-page {
+            background-image: url("/img/beer-background.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .content-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .card {
+            background-color: #2E3833;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            width: 50%;
+        }
+
+        .card form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card form .form-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: #EEFFDB;
+        }
+
+        .card form .form-group label {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card form .form-group input {
+            width: 50%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card form .form-group textarea {
+            width: 75%;
+            height: 200px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .card form .form-group button {
+            width: 50%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 1.5rem;
+            background-color: #f0ad4e;
+            color: #fff;
+        }
+
+        .card form .form-group button:hover {
+            background-color: #ec971f;
+        }
+
+        .card form .form-group input[type="submit"] {
+            width: 75%;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            font-size: 1.5rem;
+            background-color: #5cb85c;
+            color: #fff;
+        }
+
+    </style>
 </head>
-<body>
+<body class="review-edit-page">
 <div th:unless="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar}"></nav>
 </div>
 <div th:if="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
-<h1>Edit Review</h1>
-<form th:action="@{/review/edit}" th:object="${review}" th:method="post">
-    <div>
-        <input type="hidden" th:field="*{user}">
-        <input type="hidden" th:field="*{id}">
-        <input type="hidden" th:field="*{brewery}">
-        <label for="description">Description:</label>
-        <input type="text" id="description" th:field="*{description}"/>
-    </div>
-    <div>
-        <label for="image">Image:
-            <input type="text" id="image" th:field="*{image}"/>
-        </label>
-    </div>
-<!--    <div>-->
-<!--        <label for="user">User:-->
-<!--            <input type="text" id="user" th:field="*{user}"/>-->
-<!--        </label>-->
-<!--    </div>-->
-    <button type="submit">Update Review</button>
+<div class="content-container">
+    <h1>Edit Review</h1>
+    <div class="card">
+        <form th:action="@{/review/edit}" th:object="${review}" th:method="post">
+            <div class="form-group">
+                <input type="hidden" th:field="*{user}">
+                <input type="hidden" th:field="*{id}">
+                <input type="hidden" th:field="*{brewery}">
 
-</form>
-<form th:action="@{/review/delete}" th:object="${review}" method="post">
-    <input type="hidden" th:field="*{user}">
-    <input type="hidden" th:field="*{id}">
-    <input type="hidden" th:field="*{brewery}">
-    <input type="hidden" name="confirmation" value="confirm"/>
-    <button type="submit" onclick="return confirm('Are you sure you want to delete your review?')">Delete review
-    </button>
-</form>
+            </div>
+            <div class="rate">
+                <input type="radio" id="star5" name="rate" value="5" th:field="*{rating}" />
+                <label for="star5" title="text">5 stars</label>
+                <input type="radio" id="star4" name="rate" value="4" th:field="*{rating}" />
+                <label for="star4" title="text">4 stars</label>
+                <input type="radio" id="star3" name="rate" value="3" th:field="*{rating}" />
+                <label for="star3" title="text">3 stars</label>
+                <input type="radio" id="star2" name="rate" value="2" th:field="*{rating}" />
+                <label for="star2" title="text">2 stars</label>
+                <input type="radio" id="star1" name="rate" value="1" th:field="*{rating}" />
+                <label for="star1" title="text">1 star</label>
+            </div>
+            <input id="description" th:type="text" th:field="*{description}" th:value="${review.description}">
+            <button id="uploadImageBtn">Upload Images</button>
+            <input th:hidden="true" id="imgURL" th:field="*{image}" th:value="${review.image}">
+
+
+            <button type="submit" class="sign-up-button">Update Review</button>
+        </form>
+    </div>
+    <div class="card">
+        <form th:action="@{/review/delete}" th:object="${review}" method="post">
+            <input type="hidden" th:field="*{user}">
+            <input type="hidden" th:field="*{id}">
+            <input type="hidden" th:field="*{brewery}">
+            <input type="hidden" name="confirmation" value="confirm"/>
+            <button type="submit" class="sign-up-button" onclick="return confirm('Are you sure you want to delete your review?')">Delete review</button>
+        </form>
+    </div>
+</div>
+
 </body>
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<script type="module" src="/js/editReview.js"></script>
 </html>

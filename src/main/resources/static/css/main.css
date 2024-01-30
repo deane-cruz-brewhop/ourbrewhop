@@ -17,6 +17,7 @@
     min-height: 100vh;
 }
 body {
+
     margin: 0;
     padding: 0;
 }
@@ -25,6 +26,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: black;
 }
 
 ul, li, h1, h2, h3, h4, h5, h6, p{
@@ -311,7 +313,7 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-    margin-left: 250px;
+    /*margin-left: 275px;*/
     color: #D17C19;
     font-size: 2rem;
     /*margin-left: 50px;*/
@@ -324,8 +326,12 @@ body {
 
 .review-container {
     display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+   align-items: stretch;
+    justify-content: space-evenly;
     max-width: 1000px;
-    margin-left: 300px;
+    margin-left: 150px;
     margin-top: 50px;
 }
 
@@ -339,11 +345,17 @@ body {
     border-radius: 8px;
     overflow: hidden;
     background-color: #2E3833;
-    color: #F0D397;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: lightyellow;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
     position: relative;
 }
+.review-description p{
+    justify-content: center;
+    color: #F0D397;
+    width: 100%;
+;
 
+}
 .review-card .card-stuff {
     flex: 1;
     padding: 16px;
@@ -448,7 +460,7 @@ img {
 }
 
 .card-title {
-    font-size: 18px;
+    font-size: 13px;
     margin-bottom: 8px;
 }
 
@@ -783,4 +795,44 @@ img {
 
     }
 
+}
+review-all-cards{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
+    align-items: stretch;
+    justify-content: space-evenly;
+    max-width: 1000px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
+rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
 }

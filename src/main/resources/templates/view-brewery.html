@@ -1,48 +1,12 @@
+
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-        .view-brewery-body{
-            background-color: #EEFFDB;
-            color: #2E3833;
-        }
-        .review-card {
-            height: 300px;
-            width: 400px;
-            border: 1px solid transparent;
-            border-radius: 15px;
-            margin: 25px;
-            box-shadow: 5px 5px 10px 1px grey;
-            padding: 20px;
-        }
-        .checked {
-            color: #deb217;
-        }
-        .write-review-btn {
-            background-color: #F0D397;
-            color: #D17C19;
-            text-decoration: none;
-            padding: 5px 10px;
-            border-radius: 5px;
-            display: inline-block;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
-        }
+    <link rel="stylesheet" href="/css/view-breweries.css">
 
-        .write-review-btn:hover {
-            background-color: #D17C19;
-            color: #2E3833;
-        }
-
-        .write-review-btn:active {
-            background-color: #F0D397; /* Change back to the original color on click */
-            color: #D17C19;
-            text-decoration: none; /* Remove underline on click */
-        }
-    </style>
     <title>Brewery Page</title>
     <header th:replace="~{partials/head.html :: header}"></header>
 </head>
@@ -53,34 +17,44 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
+<div class="content-container">
+    <div class="brewery-info-container">
+        <div id="breweryInfo">
 
-    <div id="breweryInfo"></div>
-
-    <form id="brewIDGet" th:action="@{/create}" th:method="get">
-        <input id="brewFormID" type="hidden" name="brewery">
-        <button class="write-review-btn" type="submit">Write A Review</button>
-    </form>
-
-
-    <div id="reviewSection">
-        <h2>Reviews</h2>
-        <div th:each="review : ${listOfReviews}">
-            <div class="review-card">
-            <div class="rate">
-                <p th:hidden="true" class="rating" th:text="${review.getRating()}"></p>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-                <span class="fa fa-star"></span>
-            </div>
-            <img th:src="${review.getImage()}" style="width: 350px; height: 200px;">
-            <p th:text="${review.getDescription()}"></p>
         </div>
+        <div class="button">
+            <form id="brewIDGet" th:action="@{/create}" th:method="get">
+                <input id="brewFormID" type="hidden" name="brewery">
+                <button class="write-review-btn" type="submit">Write A Review</button>
+            </form>
         </div>
     </div>
+    <div class="review">
+        <h2>Reviews</h2>
 
-    <script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-    <script type="module" src="/js/brewery_info.js"></script>
+
+        <div id="reviewSection">
+
+
+            <div th:each="review : ${listOfReviews}">
+                <div class="review-card">
+                    <div class="rate">
+                        <p th:hidden="true" class="rating" th:text="${review.getRating()}"></p>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </div>
+                    <img th:src="${review.getImage()}" style="width: 350px; height: 200px;">
+                    <p th:text="${review.getDescription()}"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
+<script type="module" src="/js/brewery_info.js"></script>
 </body>
 </html>

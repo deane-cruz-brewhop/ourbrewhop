@@ -1,66 +1,106 @@
-.search-page{
-    background-color: #EEFFDB;
+body{
+    background-color: black;
+    /*color: #2E3833;*/
 }
-.brewery-card {
+
+.content-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: black;
+}
+
+.brewery-info-container {
+    flex-basis: 90%;
+    max-width: 90%;
+    /* Add any additional styling for the brewery info container */
+}
+
+.review-section {
+    display: flex;
+    flex-direction: column-reverse;
+    flex-basis: 35%;
+    max-width: 35%;
+    /* Add any additional styling for the review section */
+}
+
+.review-card {
+    height: 300px;
+    width: 400px;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    margin: 25px;
+    box-shadow: 5px 5px 10px 1px grey;
+    padding: 20px;
+
+}
+.review-card:hover {
+
+}
+.checked {
+    color: #deb217;
+}
+#breweryInfo {
     background-color: #2E3833;
     color: #F0D397;
-    text-decoration: none;
-    flex: 0 0 calc(25% - 20px); /* Adjust the width as needed, considering the gap */
-    max-width: calc(25% - 20px); /* Adjust the width as needed, considering the gap */
-    box-sizing: border-box;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    margin: 10px; /* Add margin between cards */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    margin: 67px auto; /* Center the card horizontally */
+    box-shadow: 5px 5px 10px 1px grey;
+    padding: 20px;
+    display: flex; /* Use flexbox to arrange child elements */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
+    max-width: 600px; /* Set a max-width for the card, adjust as needed */
 }
-.view-brewery-btn {
-    margin-left: 5px;
-    background-color: #F0D397;
-    color: #D17C19;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    display: inline-block;
-    cursor: pointer;
-    transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
-}
-
-.view-brewery-btn:hover {
-    background-color: #D17C19;
-    color: #2E3833;
-}
-
-.view-brewery-btn:active {
-    background-color: #F0D397; /* Change back to original color on click */
-    color: #D17C19;
-    text-decoration: none; /* Remove underline on click */
-}
-.brewery-image {
-    width: 100%; /* Make the image fill the card width */
-    height: 150px;
-    object-fit: cover; /* Maintain aspect ratio and cover the container */
-}
-
-.brewery-info {
-    padding: 10px;
-}
-
-.results-text {
+.brewery-info-container h2{
+    font-size:  30px;
+    font-weight: 800;
     display: flex;
     justify-content: center;
-    width: 100%;
-    padding: 10px;
-    color: #2E3833;
+    margin-top: 13px;
+    color: #F0D397;
+
 }
-.search-text{
+
+.brewery-image {
+    width: 100%; /* Image should take the full width of the card */
+    height: auto; /* Adjust the height automatically */
+    object-fit: cover; /* Cover the area without stretching */
+    border-radius: 15px 15px 0 0; /* Round only the top corners to match the card */
+    padding-bottom: 20px;
+}
+
+/* Add additional styles for other elements inside the breweryInfo as needed */
+
+/*#reviewSection {*/
+/*    flex: 0 0 35%;*/
+/*    border-radius: 15px;*/
+/*    !*display: flex;*!*/
+/*    !*flex-wrap: wrap;*!*/
+/*    background-color: black;*/
+/*    padding-right: 20px;*/
+
+/*}*/
+#reviewSection {
     display: flex;
-    justify-content: start;
-    width: 100%;
-    padding: 10px;
-    color: #2E3833;
+    flex: 0 0 35%;
+    flex-direction: column;
+    border-radius: 15px;
+    background-color: black;
+    padding-right: 20px;
+    height: 700px; /* Set a fixed height for the review section */
+    overflow-y: auto; /* Enable vertical scrolling */
 }
-.search-button{
+.review h2{
+    font-size:  25px;
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    margin-top: 13px;
+    color: #F0D397;
+}
+
+.write-review-btn {
     background-color: #F0D397;
     color: #D17C19;
     text-decoration: none;
@@ -71,32 +111,20 @@
     transition: background-color 0.3s, color 0.3s; /* Add transition for smooth color change */
 }
 
-.search-button:hover {
+
+.button{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+
+
+}
+.write-review-btn:hover {
     background-color: #D17C19;
     color: #2E3833;
 }
-
-.search-button:active {
-    background-color: #F0D397; /* Change back to original color on click */
-    color: #D17C19;
-    text-decoration: none; /* Remove underline on click */
-}
-input{
-    background-color: #2E3833;
-    color: #F0D397;
-}
-select{
-    background-color: #2E3833;
-    color: #F0D397;
-}
-.hidden {
-    display: none;
-}
-.view-brewery-btn,
-.view-brewery-btn:hover,
-.view-brewery-btn:active,
-.view-brewery-btn:focus,
-.brewery-info a {
+.blue-link {
+    color: #006fff;
     text-decoration: none;
-    color: #D17C19;
+    transition: color 0.3s; /* Add transition for smooth color change */
 }

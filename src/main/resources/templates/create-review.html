@@ -16,9 +16,16 @@
 </div>
     <h1>Create a post!</h1>
     <div id="breweryInfo"></div>
+<div class="brewery">
+<!--    <div class="brewery-name" th:text="${review.breweryName}"></div>-->
+    <div class="brewery">
 
-    <form id="create-review" th:action="@{/create}" th:method="post" th:object="${review}">
-        <input type="hidden"  id="brewFormID" name="breweryId">
+        <form id="create-review" th:action="@{/create}" th:method="post" th:object="${review}">
+            <input type="hidden" id="brewFormID" name="breweryId">
+            <input type="hidden" id="breweryName" name="breweryName"> <!-- Hidden field for brewery name -->
+
+<!--    <form id="create-review" th:action="@{/create}" th:method="post" th:object="${review}">-->
+<!--        <input type="hidden"  id="brewFormID" name="breweryId">-->
         <div class="rate">
             <input type="radio" id="star5" name="rate" value="5" th:field="*{rating}" />
             <label for="star5" title="text">5 stars</label>
