@@ -8,7 +8,7 @@
 <body class="sign-up-page">
 <nav th:insert="~{partials/nav-bar.html :: nav-bar3}"></nav>
 <div class="content-container">
-    <h1 class="create-account-text">CREATE YOUR ACCOUNT NOW!</h1>
+    <h1 class="create-account-text"> Create Your Account Now!</h1>
     <div class="card">
         <form th:action="@{/sign-up}" method="POST" th:object="${user}" onsubmit="validatePassword(event)">
         <div class="form-group">

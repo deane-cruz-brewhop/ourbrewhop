@@ -7,8 +7,9 @@
 </head>
 <body class="sign-in-page">
 <nav th:insert="~{partials/nav-bar.html :: nav-bar3}"></nav>
+
 <div class="content-container">
-    <h1>SIGN INTO YOUR ACCOUNT</h1>
+    <h1>Sign in to Your Account</h1>
     <div class="card">
         <form th:action="@{/sign-in}" method="POST">
             <div class="form-group">
@@ -26,5 +27,8 @@
         <p>New user? <a href="/sign-up">Sign up here!</a></p>
     </div>
 </div>
+
+
+
 </body>
 </html>
