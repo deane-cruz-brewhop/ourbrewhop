@@ -10,14 +10,17 @@ console.log(breweryID);
 fetch('https://api.openbrewerydb.org/v1/breweries/' + breweryID)
     .then(response => response.json())
     .then(brewery => {
+        // Store the brewery name in a variable
+        const breweryName = brewery.name;
+
+        // Set the brewery name in the hidden input field
+        document.getElementById('breweryName').value = breweryName;
 
         const formattedPhone = brewery.phone ? formatPhoneNumber(brewery.phone) : 'N/A';
-
         const breweryInfoDiv = document.getElementById('breweryInfo');
-        breweryInfoDiv.innerHTML = `
-                    <h2>${brewery.name}</h2>
-                   `
+        breweryInfoDiv.innerHTML = `<h2>${brewery.name}</h2>`;
     }).catch(error => console.error('Error:', error));
+
 
 let imgUploadBtn = document.getElementById('uploadImageBtn');
 imgUploadBtn.addEventListener('click', function (e) {

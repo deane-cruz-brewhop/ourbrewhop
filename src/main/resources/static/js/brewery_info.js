@@ -39,20 +39,20 @@ if (!breweryID) {
         .then(brewery => {
             const formattedPhone = brewery.phone ? formatPhoneNumber(brewery.phone) : 'N/A';
             const breweryImagePath = getBreweryImagePath(brewery.id);
-             const breweryImageHTML = `<img src="${breweryImagePath}" alt="Brewery Image" onerror="handleImageError(this)" style="width: 150px; height: 150px;">`;
+             const breweryImageHTML = `<img src="${breweryImagePath}" alt="Brewery Image" onerror="handleImageError(this)" style="width: 250px; height: 300px;">`;
 
             const breweryInfoDiv = document.getElementById('breweryInfo');
             breweryInfoDiv.innerHTML = `
                 ${breweryImageHTML}
                 <h2>${brewery.name}</h2>
-                breweryID: ${brewery.id}<br>
+               
                 <p>
                     Type: ${brewery.brewery_type}<br>
-                    Address: ${brewery.street ? brewery.street : 'N/A'},
+                     ${brewery.street ? brewery.street : 'N/A'},
                              ${brewery.city},
                              ${brewery.state},
                              ${brewery.postal_code}<br>
-                    Website: ${brewery.website_url ? `<a href="${brewery.website_url}" target="_blank">${brewery.website_url}</a>` : 'N/A'}<br>
+                   ${brewery.website_url ? `<a href="${brewery.website_url}" target="_blank" class="blue-link">${brewery.website_url}</a>` : 'N/A'}<br>
                     Phone: ${formattedPhone}
                 </p>`;
         })
