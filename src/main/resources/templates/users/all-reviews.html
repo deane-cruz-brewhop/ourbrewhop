@@ -5,11 +5,6 @@
   <link rel="stylesheet" href="/css/main.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <meta name="_csrf" th:content="${_csrf.token}" />
-  <style>
-    .checked {
-      color: #deb217;
-    }
-    </style>
   <title>All Reviews</title>
   <th:import var="java" className="java.lang.Math" />
   <th:import var="reviewClass" class="com.example.codeupspringcapstone.models.Review" />
@@ -21,36 +16,27 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
   <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
-<div class="review-all-cards">
-<div class="col">
-  <div style="justify-content: center; display: flex">
-    <h1 style="font-size: 20px; color: #2E3833; padding: 10px;">Your Visited Breweries</h1>
+<div class="all-reviews-row" style="display: flex">
+
+  <div class="-all-reviews-col">
+    <div style="justify-content: center; display: flex">
+    <h1 class="visited-text">Your Visited Breweries</h1>
   </div>
-  <div class="container all-reviews-container">
-    <th:block th:each="review : ${allReviews}">
-      <div class="all-reviews-card">
-        <div class="card-stuff">
-          <img th:src="${review.image}" class="review-image">
-          <div class="brewery-name" th:text="${review.breweryName}">
+    <div class="container all-reviews-container">
+      <th:block th:each="review : ${allReviews}">
+        <div class="all-reviews-card">
+          <div class="card-stuff">
+            <img th:src="${review.image}" class="review-image">
+            <p class="rating" th:text="${review.rating}"></p>
+            <h5 class="card-title" th:text="${review?.description}"></h5>
+            <button class="card-button">
+              <a th:href="@{/view-review/{id}(id=${review.id})}">View Review</a>
+            </button>
           </div>
-          <p th:hidden="true" class="rating" th:text="${review.getRating()}"></p>
-          <p class="rating" data-rating="${review.getRating()}"></p>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
         </div>
-        <h5 class="card-title" th:text="${review?.description}"></h5>
-        <button class="card-button">
-          <a th:href="@{/view-review/{id}(id=${review.id})}">View Review</a>
-        </button>
-      </div>
-    </th:block>
+      </th:block>
+    </div>
   </div>
 </div>
-</div>
-<script src="//static.filestackapi.com/filestack-js/3.x.x/filestack.min.js"></script>
-<script type="module" src="/js/stars.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@
 <div th:if="${#authorization.expression('isAuthenticated()')}">
     <nav th:insert="~{partials/nav-bar.html :: nav-bar2}"></nav>
 </div>
+<div class="scroll-title">
 <h1 class="terms-text">Terms of Service</h1>
 <div class="scroll-box">
 <h2 class="terms-title">Acceptance of Terms</h2>
@@ -38,6 +39,7 @@
     </div>
 
     <p class="footer-paragraph">Embark on a journey of flavor and discovery. Your passport to the world of craft brews and global adventures.</p>
+</div>
 </div>
 </body>
 </html>
